@@ -1,4 +1,4 @@
-#main-page, #loading-page, #second-user-input-page, #google-maps {
+#main-page, #loading-page, #second-user-input-page, #google-maps, #array {
     height: 100vh;
     width: 100vw; 
     max-width: 100%; 
@@ -20,13 +20,13 @@
     text-align: center; 
 }
 
-#gm-column {
+#address-column {
     text-align: center; 
     margin-top: 30px; 
 }
 
 #google-maps {
-    background-color: white; 
+    background-color: rgb(255, 236, 202); 
 }
 
 #sip-logo {
@@ -74,4 +74,20 @@
 
 #nav-bar {
     height: 50px; 
+}
+
+#gm-large {
+    border: solid black 3px; 
+    text-align: center; 
+    margin-top: 50px; 
+    height: 500px; 
+    width: 1000px; 
+}
+
+#gm-row {
+    text-align: center; 
+}
+
+#result-1 {
+    text-align: center; 
 }
