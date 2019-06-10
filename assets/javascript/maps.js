@@ -10,7 +10,7 @@
     queryParams.type = "cafe"
     queryParams.keyword = "starbucks,peets,philz"
     
-    queryParams.maxprice = 4; //specified 0-4, 4 being most expensive
+    queryParams.maxprice = 2; //specified 0-4, 4 being most expensive
     
     queryParams.opennow = true; //only shows places currently open
 
@@ -20,16 +20,45 @@
         //TODO: Take object data and and obtain Place Details (yelp api or google places api) to get a return for the business data to post onto infoWindow in Javascript MAP or onto page. 
 
     
-    // $(document).on("click", ".cafe-or-bar", function (){ //event listener for cafe or bar select button
-    //     var userSelect = $(this).val()
-    //     if (userSelect === "bar"){
-    //         queryParams.type = "bar"
-    //         queryParams.keyword = "pub,bar,wine,alcohol"
-    //     } else {
-    //         queryParams.type = "cafe"
-    //         queryParams.keyword = "starbucks,peets,philz"
-    //     }
-    // })
+    $(document).on("click", ".user-select", function (){ //event listener to select query paramaters
+        var userSelect = $(this).val()
+        
+        if (userSelect === "bar"){
+            queryParams.type = "bar"
+            queryParams.keyword = "pub,bar,wine,alcohol"
+
+            console.log(queryUrl + $.param(queryParams))
+        } else {
+            queryParams.type = "cafe"
+            queryParams.keyword = "starbucks,peets,philz"
+
+            console.log(queryUrl + $.param(queryParams))
+        }
+
+        if (userSelect === "price0") {
+            queryParams.maxprice = 0;
+
+            console.log(queryUrl + $.param(queryParams))
+        } else if (userSelect ==="price1") {
+            queryParams.maxprice = 1;
+
+            console.log(queryUrl + $.param(queryParams))
+        } else if (userSelect ==="price2") {
+            queryParams.maxprice = 2;
+
+            console.log(queryUrl + $.param(queryParams))
+        } else if (userSelect ==="price3") {
+            queryParams.maxprice = 3;
+
+            console.log(queryUrl + $.param(queryParams))
+        } else if (userSelect ==="price4") {
+            queryParams.maxprice = 4;
+
+            console.log(queryUrl + $.param(queryParams))
+        }
+
+
+    })
     
 
     
