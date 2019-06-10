@@ -1,4 +1,4 @@
-#main-page, #loading-page, #second-user-input-page {
+#main-page, #loading-page, #second-user-input-page, #google-maps {
     height: 100vh;
     width: 100vw; 
     max-width: 100%; 
@@ -18,6 +18,15 @@
 #loading-page {
     background-color:beige;
     text-align: center; 
+}
+
+#gm-column {
+    text-align: center; 
+    margin-top: 30px; 
+}
+
+#google-maps {
+    background-color: black; 
 }
 
 #sip-logo {
