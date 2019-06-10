@@ -1,10 +1,10 @@
-    
-    var queryUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
 
+    var queryUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+    
     var queryParams = { "key": "AIzaSyAcbZ5RSSMLD-LsEWsG3R-bf-b-6ulyMqw"}
     
     queryParams.location = "37.8087,-122.4098" //specifies location for search (San Francisco in this example)
-
+    
     queryParams.radius = 1500; //1500 meters is just within 1 mile
     
     queryParams.type = "cafe"
@@ -13,7 +13,15 @@
     queryParams.maxprice = 2; //specified 0-4, 4 being most expensive
     
     queryParams.opennow = true; //only shows places currently open
+    
 
+    //Location Parameters
+    var sanFrancisco = {
+        innerRichmond: "37.7799,-122.4647",
+        outerRichmond: "37.7777,-122.4953"
+    };
+    
+    console.log(sanFrancisco)
     
     console.log(queryUrl + $.param(queryParams)) //**TAKE THIS STRING AND ENTER IT INTO AN AJAX CALL TO GET JSON OBJ BACK**
     
@@ -22,19 +30,20 @@
     
     $(document).on("click", ".user-select", function (){ //event listener to select query paramaters
         var userSelect = $(this).val()
-        
+        //Type of search
         if (userSelect === "bar"){
             queryParams.type = "bar"
             queryParams.keyword = "pub,bar,wine,alcohol"
 
             console.log(queryUrl + $.param(queryParams))
-        } else {
+        } else if (userSelect === "cafe") {
             queryParams.type = "cafe"
             queryParams.keyword = "starbucks,peets,philz"
 
             console.log(queryUrl + $.param(queryParams))
         }
 
+        //Price Range
         if (userSelect === "price0") {
             queryParams.maxprice = 0;
 
@@ -57,7 +66,12 @@
             console.log(queryUrl + $.param(queryParams))
         }
 
+        //Location Filter
+        if (userSelect === "inner-richmond") {
+            queryParams.location = sanFrancisco.innerRichmond;
 
+            console.log(queryUrl + $.param(queryParams))
+        } 
     })
     
 
