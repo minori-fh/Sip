@@ -91,3 +91,13 @@
 #result-1 {
     text-align: center; 
 }
+
+#array {
+    background-color: grey; 
+}
+
+#options-column {
+    margin-top: 50px;
+    font-family: 'Pacifico', cursive;
+    font-size: 30px; 
+}
