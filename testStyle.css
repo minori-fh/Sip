@@ -101,3 +101,15 @@
     font-family: 'Pacifico', cursive;
     font-size: 30px; 
 }
+
+.card {
+    height: 220px; 
+}
+
+#option-2 {
+    margin-top: 20px; 
+}
+
+#description-1, #description-2 {
+    border: solid black 3px; 
+}
