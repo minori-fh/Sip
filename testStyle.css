@@ -98,14 +98,12 @@
     text-align: center; 
 }
 
-#array {
-    background-color: grey; 
-}
-
 #options-column {
     margin-top: 50px;
     font-family: 'Pacifico', cursive;
-    font-size: 30px; 
+	font-size: 30px; 
+	color: white; 
+	overflow: visible !important
 }
 
 .card {
@@ -146,6 +144,22 @@
 	font-family: 'Pacifico', cursive;
 	width: 70px; 
 	border-radius: 12px; 
+}
+
+#option-content {
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1; 
+	margin-top: 5%; 
+	border: solid black 1px; 
+}
+
+#sip-logo2 {
+	margin-top: 0px; 
+	margin-top: -50px; 
+}
+
+#sip-logo-column {
+	text-align: center; 
 }
 
 /* Styling for cloud background */
