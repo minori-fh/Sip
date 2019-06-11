@@ -132,7 +132,7 @@ $(document).ready(function () {
         });
         
         
-        var queryUrl = (baseUrl + $.param(queryParams)) // Consolidated GET url with updated variables after user selection
+        queryUrl = (baseUrl + $.param(queryParams)) // Consolidated GET url with updated variables after user selection
         
         
         //Ajax call to Yelp API
