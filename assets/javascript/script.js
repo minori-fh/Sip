@@ -1,5 +1,10 @@
 
 $(document).ready(function () {
+    var i = 0;
+    var tyNextC = 0; 
+    var tyNextA = 0; 
+
+
     // Variables to be put into queryURL
 
     var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for location search query
@@ -136,53 +141,99 @@ $(document).ready(function () {
         queryUrl = (baseUrl + $.param(queryParams)) // Consolidated GET url with updated variables after user selection
         console.log(queryUrl)
         
+
+
         //Ajax call to Yelp API
-          $.ajax({
-            url: queryUrl,
-            method: "GET",
-                  
-            headers: {
-              authorization: "Bearer KQWhz9_RIh91MBjFk0ieWlqw9hOdrfJPFDZsGeAQcd3xPc9KV57sSDZBxftr2vfBqFjgcq2nBuas8lZ8wVDWHbtYQQFLpneMHocF27Tk_43hgOjMY-fT2hnGt1P9XHYx"
+         var printData = function() {
+             $.ajax({
+                url: queryUrl,
+                method: "GET",
+                      
+                headers: {
+                  authorization: "Bearer KQWhz9_RIh91MBjFk0ieWlqw9hOdrfJPFDZsGeAQcd3xPc9KV57sSDZBxftr2vfBqFjgcq2nBuas8lZ8wVDWHbtYQQFLpneMHocF27Tk_43hgOjMY-fT2hnGt1P9XHYx"
+                }
+              }).then(function (response) {
+                console.log(response)
+     
+                    var businessInfo1 = $(".description-1")
+                    var businessInfo2 = $(".description-2")
+                    businessInfo1.empty()
+                    businessInfo2.empty()
+     
+                    // TODO: FORMATTING FOR DYNAMICALLY APPENDED INFORMATION.
+     
+                    var img1 = $(".img-1")
+                    img1.addClass("thumbnail") // TODO: Add CSS for formatting images
+                    img1.attr("src", response.businesses[i].image_url)
+                    
+                    var img2 = $(".img-2")
+                    img2.addClass("thumbnail") // TODO: Add CSS for formatting images
+                    img2.attr("src", response.businesses[i+1].image_url)
+     
+                    var businessName1 = $(".name-1") // TODO: Position bussiness name on top of business image; Maybe add white text stroke for text to pop out
+                    businessName1.text(response.businesses[i].name)
+        
+                    var businessName2 = $(".name-2") // TODO: Position bussiness name on top of business image; Maybe add white text stroke for text to pop out
+                    businessName2.text(response.businesses[i+1].name)
+                    
+                    var yelpLogo = $('<img>')
+                    yelpLogo.attr("src", "assets/images/yelp-logo.png")
+                    yelpLogo.attr("width", "40px")
+                    
+                    var anchorLogo1 = $("<a>")
+                    anchorLogo1.attr("href", response.businesses[i].url)
+                    anchorLogo1.attr("target", "_blank")
+                    anchorLogo1.append(yelpLogo)
+                    yelpLogo.wrap(anchorLogo1)
+                    
+                    var anchorLogo2 = $("<a>")
+                    anchorLogo2.attr("href", response.businesses[i].url)
+                    anchorLogo2.attr("target", "_blank")
+                    anchorLogo2.append(yelpLogo)
+                    
+                    businessInfo1.prepend(anchorLogo1)
+                    businessInfo1.prepend(response.businesses[i].price)
+                    businessInfo1.prepend(response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code)
+                    businessInfo1.prepend("Rating: " + response.businesses[i].rating)
+                    
+                    businessInfo2 = $(anchorLogo2)
+                    businessInfo2.prepend(response.businesses[i+1].price)
+                    businessInfo2.prepend(response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code)
+                    businessInfo2.prepend("Rating: " + response.businesses[i+1].rating)
+        
+              });
+             
+        } 
+        
+        printData();
+        i+2;
+         
+       }); 
+
+        $("#next-button-1").on("click",function(){
+            tyNextC++
+            printData();
+            i+2;
+            console.log(tyNextC)
+            if (tyNextC === 3){
+                $("#array-coffee").hide()
+                $("#google-maps").show()
+        
             }
-          }).then(function (response) {
-            console.log(response)
-
-            for (var i = 0; i < response.businesses.length; i++) {
-                var img = $("<img>")
-                img.addClass("thumbnail")
-                img.attr("src", response.businesses[i].image_url)
-                
-                var h2 = $("<h2>")
-                h2.addClass("name")
-                h2.text(response.businesses[i].name)
-                
-                var p = $("<p>")
-                p.addClass("address")
-                p.text(response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code)
-                
-                var siteLink = $("<a>")
-                siteLink.attr("href", response.businesses[i].url)
-                siteLink.attr("target", "_blank")
-                siteLink.text("Yelp Logo")
-                
-                var priceRange = $("<p>")
-                priceRange.addClass("price")
-                priceRange.text(response.businesses[i].price)
-                
-                var rating = $("<p>")
-                rating.addClass("rating")
-                rating.text("Rating: " + response.businesses[i].rating)
-
-                var hr = $("<hr>")
-
-                var businessesDiv = $("#render-businesses")
-
-                businessesDiv.append([img, h2, p, siteLink, priceRange, rating, hr])
+        });
+        
+        $("#next-button-2").on("click",function(){
+            tyNextA++
+            printData();
+            console.log(responseData.businesses[i])
+            i+2;
+            console.log(tyNextA)
+            if (tyNextA === 3){
+                $("#array-drink").hide()
+                $("#google-maps").show()
             }
-    
-          });
-        }); 
     });
+})
 
 
     
