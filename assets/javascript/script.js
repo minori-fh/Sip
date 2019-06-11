@@ -37,6 +37,8 @@ $(document).ready(function () {
     queryParams.price = "1,2,3,4";
     
     $(document).on("click", ".user-select", function (){ //event listener to select query paramaters
+        $("#render-businesses").empty(); //empties previous search query
+
         var userSelect = $(this).val() 
 
         var queryUrl = (baseUrl + $.param(queryParams))
@@ -151,7 +153,7 @@ $(document).ready(function () {
                 
                 var h2 = $("<h2>")
                 h2.addClass("name")
-                h2.attr("src", response.businesses[i].name)
+                h2.text(response.businesses[i].name)
                 
                 var p = $("<p>")
                 p.addClass("address")
@@ -172,7 +174,7 @@ $(document).ready(function () {
 
                 var hr = $("<hr>")
 
-                var businessesDiv = $("#div_where_we_append_businesses")
+                var businessesDiv = $("#render-businesses")
 
                 businessesDiv.append([img, h2, p, siteLink, priceRange, rating, hr])
             }
