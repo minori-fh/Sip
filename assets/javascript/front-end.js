@@ -19,6 +19,36 @@ var coffee = 0;
 var tyNextC = 0; 
 var tyNextA = 0; 
 
+//Event handler: when user clicks on image
+// $(document).on("click","#alc-picture",function(e){
+//     var pWidth = $(this).innerWidth(); //use .outerWidth() if you want borders
+//     var pOffset = $(this).offset(); 
+//     var x = e.pageX - pOffset.left;
+//     if(pWidth/2 > x){
+//         console.log("left")
+//         $("#alc-picture").addClass("rotate-center-left")
+//     } else{
+//         console.log("right")
+//         $("#alc-picture").addClass("rotate-center-right")
+//     }
+// })
+
+$("#alc-picture").on("click",function(e) {
+    var pWidth = $(this).innerWidth(); //use .outerWidth() if you want borders
+    var pOffset = $(this).offset(); 
+    var x = e.pageX - pOffset.left;
+    if(pWidth/2 > x){
+        $("#alc-picture").addClass("rotate-center-left")
+
+        setTimeout(function(){ $("#alc-picture").removeClass("rotate-center-left");},1000)
+    } else{
+        $("#alc-picture").addClass("rotate-center-right")
+
+        setTimeout(function(){ $("#alc-picture").removeClass("rotate-center-right");},1000)
+    }
+});
+
+
 //Event handler: when user picks alcohol
 $("#user-pick-alc").on("click",function() {
     alcohol = 1;
