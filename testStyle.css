@@ -65,7 +65,7 @@
     color: white; 
 }
 
-#user-input-1 {
+#user-input-1, #user-input-2 {
     text-align: center; 
     margin-top: 50px; 
 }
@@ -143,10 +143,21 @@
 	margin-bottom: 15px; 
 }
 
-#next-button {
+#next-button, #go-back {
 	border-radius: 12px; 
 	width: 200px; 
 	font-family: 'Pacifico', cursive;
+}
+
+#go-back {
+	border-radius: 12px; 
+	width: 100px; 
+	font-family:'Pacifico', cursive;
+}
+
+#go-back-row {
+	text-align: right; 
+	margin-top: 500px; 	
 }
 
 #search {
