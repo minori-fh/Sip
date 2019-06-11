@@ -115,7 +115,10 @@
 }
 
 #description-1, #description-2 {
-    border: solid black 3px; 
+	border: solid black 3px; 
+	background-color: white; 
+	color: black; 
+	font-family: 'Quicksand', sans-serif;
 }
 
 #gm-content {
@@ -130,8 +133,9 @@
 }
 
 #next {
-	margin-top: 40px; 
+	margin-top: 15px; 
 	text-align: right; 
+	margin-bottom: 15px; 
 }
 
 #next-button {
@@ -147,7 +151,7 @@
 }
 
 #option-content {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.8);
 	z-index: 1; 
 	margin-top: 5%; 
 	border: solid black 1px; 
