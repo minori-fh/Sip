@@ -35,10 +35,6 @@
     margin-top: 30px; 
 }
 
-#google-maps {
-    background-color: rgb(255, 236, 202); 
-}
-
 #sip-logo {
     margin-top: 300px; 
 }
@@ -143,10 +139,11 @@
 	margin-bottom: 15px; 
 }
 
-#next-button, #go-back {
+#next-button-1, #next-button-2, #go-back {
 	border-radius: 12px; 
 	width: 200px; 
 	font-family: 'Pacifico', cursive;
+	color: white; 
 }
 
 #go-back {
