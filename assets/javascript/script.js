@@ -24,13 +24,14 @@ $(document).ready(function () {
     var parseCoords = function(neighboorhood){ // Takes string from neighboorhood variables and creates lat/lng coordinates
         neighboorhood.split(",")[0] = queryParams.latitude
         neighboorhood.split(",")[1] = queryParams.longitude
+        queryParams.radius = "1500"
     } 
 
     // Default values for queryUrl
     var baseUrl = "https://api.yelp.com/v3/businesses/search?";
-    var queryParams = {"radius": "1500"};
+    var queryParams = {"radius": "3000"};
     queryParams.sort_by = "rating"
-    queryParams.latitude = "37.8087";
+    queryParams.latitude = "37.8087";  // Default location is San Franscisco
     queryParams.longitude = "-122.4098";
     queryParams.open_now = true;
     queryParams.price = "1,2,3,4";
