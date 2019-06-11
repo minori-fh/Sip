@@ -49,7 +49,7 @@
 
 #title-2 {
     font-family: 'Pacifico', cursive;
-    font-size: 70px; 
+    font-size: 100px; 
     text-align: center; 
     color: black;
     padding-top: 40px; 
@@ -177,6 +177,14 @@
 
 #sip-logo-column {
 	text-align: center; 
+}
+
+#ddPrice, #ddLocation {
+	background-color: transparent !important;
+	border: none !important;
+	color: black; 
+	font-size: 30px; 
+	
 }
 
 /* Styling for cloud background */
