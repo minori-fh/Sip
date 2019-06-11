@@ -5,6 +5,11 @@
     max-height: 100%; 
 }
 
+#array {
+	background-image: url("images/coffeebg.jpg");
+	background-size: cover; 
+}
+
 #main-page {
     background-image: 
     linear-gradient(90deg, pink 50%, rgb(246, 187, 77) 50%)
