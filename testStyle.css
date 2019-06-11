@@ -122,6 +122,27 @@
     text-align: center; 
 }
 
+#sub {
+	font-family: 'Quicksand', sans-serif;
+}
+
+#next {
+	margin-top: 40px; 
+	text-align: right; 
+}
+
+#next-button {
+	border-radius: 12px; 
+	width: 200px; 
+	font-family: 'Pacifico', cursive;
+}
+
+#search {
+	font-family: 'Pacifico', cursive;
+	width: 70px; 
+	border-radius: 12px; 
+}
+
 /* Styling for cloud background */
 *{ margin: 0; padding: 0;}
 
