@@ -34,7 +34,7 @@ $(document).ready(function () {
     queryParams.latitude = "37.8087";  // Default location is San Franscisco
     queryParams.longitude = "-122.4098";
     queryParams.open_now = true;
-    queryParams.price = "1,2,3,4";
+    queryParams.price = "1";
     
     $(".user-select, .dropdown-item").on("click", function (){ //event listener to select query paramaters
         $("#render-businesses").empty(); //empties previous search query
@@ -134,7 +134,7 @@ $(document).ready(function () {
         
         
         queryUrl = (baseUrl + $.param(queryParams)) // Consolidated GET url with updated variables after user selection
-        
+        console.log(queryUrl)
         
         //Ajax call to Yelp API
           $.ajax({
