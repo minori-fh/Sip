@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sip</title>
+    <!-- Link to style sheet -->
+    <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand&display=swap" rel="stylesheet">
+    <!-- Link to jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- Loading Page Section here -->
+<section id = "loading-page">
+    <img id = "sip-logo" src = "images/SipFirstLogo-removebg.png" width = "200px">
+    <p id = "sub">Mixing your drink...</p>
+</section>
+
+<!-- First User-Input Section here -->
+<section id = "main-page">
+    <div class = "row" id = "title">
+        <div class = "col-md-1">
+    
+        </div>
+        <div class = "col-md-10">
+            Let's grab a drink!
+        </div>
+        <div class = "col-md-1">
+            
+        </div>
+    </div>
+    
+    <div class = "row" id = "user-input-1">
+        <div class = "col-md-3">
+    
+        </div>
+        <div class = "col-md-3" id = "coffee">
+            <p id = "user-pick-alc">Want to get lit?</p>
+        </div>
+        <div class = "col-md-3" id = "alc">
+            <p id = "user-pick-coffee">Need a pick-me-up?</p>
+        </div>
+        <div class = "col-md-3">
+            
+        </div>
+    </div>
+    
+    <div class = "row" id = "pic-row">
+        <div class = "col-md-12" id = "pic-column">
+            <img id = "alc-picture" src = "images/alcVScoffee-nobg.png" width = "600px">
+        </div>
+    </div>
+</section>
+
+<!-- Second User-Input Section here -->
+<section id = "second-user-input-page">
+    <div class = "row" id = "title-2">
+        <div class = "col-md-1">
+    
+        </div>
+        <div class = "col-md-10">
+            What's most important?
+        </div>
+        <div class = "col-md-1">
+            
+        </div>
+    </div>
+    
+    <div class = "row" id = "user-input-2">
+        <div class = "col-md-3">
+    
+        </div>
+        <div class = "col-md-3" id = "price">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="ddPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Price
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a id = "oneD" class="dropdown-item" href="#">$</a>
+                    <a id = "twoD" class="dropdown-item" href="#">$$</a>
+                    <a id = "threeD" class="dropdown-item" href="#">$$$</a>
+                    <a id = "fourD" class="dropdown-item" href="#">$$$$</a>
+                </div>
+            </div>
+        </div>
+        <div class = "col-md-3" id = "location">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="ddLocation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Location
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a id = "IR" class="dropdown-item" href="#">Inner Richmond</a>
+                    <a id = "OR" class="dropdown-item" href="#">Outer Richmond</a>
+                    <a id = "IS" class="dropdown-item" href="#">Inner Sunset</a>
+                    <a id = "OS" class="dropdown-item" href="#">Outer Sunset</a>
+                    <a id = "FH" class="dropdown-item" href="#">Forrest Hill</a>
+                    <a id = "C" class="dropdown-item" href="#">Castro</a>
+                    <a id = "pacificH" class="dropdown-item" href="#">Pacific Heights</a>
+                    <a id = "P" class="dropdown-item" href="#">Panhandle</a>
+                    <a id = "E" class="dropdown-item" href="#">Excelsior</a>
+                    <a id = "missionD" class="dropdown-item" href="#">Mission District</a>
+                    <a id = "potreroH" class="dropdown-item" href="#">Potrero Hill</a>
+                    <a id = "marinaD" class="dropdown-item" href="#">Marina District</a>
+                    <a id = "F" class="dropdown-item" href="#">Filmore</a>
+                    <a id = "SOMA" class="dropdown-item" href="#">SOMA</a>
+                    <a id = "FiDi" class="dropdown-item" href="#">Financial District</a>
+                    <a id = "NB" class="dropdown-item" href="#">North Beach</a>
+                </div>
+            </div>
+        </div>
+        <div class = "col-md-3">
+           
+        </div>
+    </div>
+
+    <div class = "row" id = "go-back-row">
+        <div class = "col-md-11">
+            <a href = "#main-page">Go back</a>
+        </div>
+        <div class = "col-md-1">
+
+        </div>
+    </div>
+</section>
+
+<!-- Array of Restaurant Section here -->
+<section id = "array-coffee">
+
+    <div class = "row">
+        <div class = "col-md-1">
+            
+        </div>
+        <div class = "col-md-10" id = "option-content">
+            <div class = "row" id = "options-row">
+                <div class = "col-md-1">
+        
+                </div>
+                <div class = "col-md-2" id = "options-column">
+                    <p>Options for: </p>
+        
+                </div>
+                <div class = "col-md-6" id = "sip-logo-column">
+                    <img id = "sip-logo2" src = "images/SipFirstLogo-removebg.png" width = "150px">
+                </div>
+                <div class = "col-md-2">
+        
+                </div>
+                <div class = "col-md-1">
+            
+                </div>
+            </div>
+        
+            <div class = "row" id = "option-1">
+                <div class = "col-md-1">
+        
+                </div>
+                <div class = "col-md-3">
+                    <div class="card" width="100px">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class = "col-md-3">
+                    <div class="card" width="100px">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class = "col-md-4" id = "description-1">
+                    <p>Phone Number: </p>
+                    <p>Business Hours: </p>
+                    <p>Location: </p>
+                    <p>Price: </p>
+                    <img src = "images/yelp-logo.png" width = "40px" height = "40px" > 
+                </div>
+                <div class = "col-md-1">
+        
+                </div>
+            </div>
+        
+            <div class = "row" id = "option-2">
+                <div class = "col-md-1">
+            
+                </div>
+                <div class = "col-md-3">
+                    <div class="card" width="100px">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class = "col-md-3">
+                    <div class="card" width="100px">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class = "col-md-4" id = "description-2">
+                    <p>Phone Number</p>
+                    <p>Business Hours</p>
+                    <p>Location</p>
+                    <p>Price</p>
+                    <img src = "images/yelp-logo.png" width = "40px" height = "40px" > 
+                </div>
+                <div class = "col-md-1">
+        
+                </div>
+            </div>
+        
+            <div id = "next">
+                <div class = "col-md-11">
+                    <a id = "next-button-1" href = "#">Thank you, next.</a>
+                </div>
+                <div class = "col-md-1">
+        
+                </div>
+            </div>  
+
+        </div>
+        <div class = "col-md-1">
+            
+        </div>
+    </div>
+
+</section>
+
+<!-- Array of Restaurant Section here -->
+<section id = "array-drink">
+
+    <div class = "row">
+        <div class = "col-md-1">
+            
+        </div>
+        <div class = "col-md-10" id = "option-content">
+            <div class = "row" id = "options-row">
+                <div class = "col-md-1">
+        
+                </div>
+                <div class = "col-md-2" id = "options-column">
+                    <p>Options for: </p>
+        
+                </div>
+                <div class = "col-md-6" id = "sip-logo-column">
+                    <img id = "sip-logo2" src = "images/SipFirstLogo-removebg.png" width = "150px">
+                </div>
+                <div class = "col-md-2">
+        
+                </div>
+                <div class = "col-md-1">
+            
+                </div>
+            </div>
+        
+            <div class = "row" id = "option-1">
+                <div class = "col-md-1">
+        
+                </div>
+                <div class = "col-md-3">
+                    <div class="card" width="100px">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class = "col-md-3">
+                    <div class="card" width="100px">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class = "col-md-4" id = "description-1">
+                    <p>Phone Number: </p>
+                    <p>Business Hours: </p>
+                    <p>Location: </p>
+                    <p>Price: </p>
+                    <img src = "images/yelp-logo.png" width = "40px" height = "40px" > 
+                </div>
+                <div class = "col-md-1">
+        
+                </div>
+            </div>
+        
+            <div class = "row" id = "option-2">
+                <div class = "col-md-1">
+            
+                </div>
+                <div class = "col-md-3">
+                    <div class="card" width="100px">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class = "col-md-3">
+                    <div class="card" width="100px">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class = "col-md-4" id = "description-2">
+                    <p>Phone Number</p>
+                    <p>Business Hours</p>
+                    <p>Location</p>
+                    <p>Price</p>
+                    <img src = "images/yelp-logo.png" width = "40px" height = "40px" > 
+                </div>
+                <div class = "col-md-1">
+        
+                </div>
+            </div>
+        
+            <div id = "next">
+                <div class = "col-md-11">
+                    <a id = "next-button-2" href = "#">Thank you, next.</a>
+                </div>
+                <div class = "col-md-1">
+        
+                </div>
+            </div>  
+
+        </div>
+        <div class = "col-md-1">
+            
+        </div>
+    </div>
+
+</section>
+
+<!-- Google Maps Section here -->
+<section id = "google-maps">
+    <div id="clouds">
+        <div class="cloud x1"></div>
+        <!-- Time for multiple clouds to dance around -->
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+    
+        <div id = "gm-content">
+
+            <div id = "address-column">
+                <input id = "address" type = "text" size = "100" placeholder = "What's your address?"> 
+                <input type="submit" id = "search" value="Search">
+            </div>
+
+    
+            <div id = "gm-row">
+                <div id = "gm-large">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Link to javascript -->
+<script src="testJS.js"></script>  
+</body>
+</html>
