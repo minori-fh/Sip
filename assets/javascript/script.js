@@ -39,7 +39,7 @@ $(document).ready(function () {
     $(".user-select, .dropdown-item").on("click", function (){ //event listener to select query paramaters
         $("#render-businesses").empty(); //empties previous search query
 
-        var userSelect = $(this).val()
+        var userSelect = $(this).attr("data-value")
         console.log(userSelect)
 
         var queryUrl = (baseUrl + $.param(queryParams))
