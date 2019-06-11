@@ -36,13 +36,14 @@ $(document).ready(function () {
     queryParams.open_now = true;
     queryParams.price = "1,2,3,4";
     
-    $(document).on("click", ".user-select", function (){ //event listener to select query paramaters
+    $(".user-select, .dropdown-item").on("click", function (){ //event listener to select query paramaters
         $("#render-businesses").empty(); //empties previous search query
 
-        var userSelect = $(this).val() 
+        var userSelect = $(this).val()
+        console.log(userSelect)
 
         var queryUrl = (baseUrl + $.param(queryParams))
-
+        console.log(queryUrl)
          //Type of search
          if (userSelect === "bar"){
             queryParams.category = "bar"

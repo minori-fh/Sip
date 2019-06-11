@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sip</title>
     <!-- Link to style sheet -->
-    <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+    <link rel = "stylesheet" type = "text/css" href = "assets/style/style.css">
     <!-- Link to Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- Link to Google Fonts -->
@@ -18,7 +18,7 @@
 
 <!-- Loading Page Section here -->
 <section id = "loading-page">
-    <img id = "sip-logo" src = "images/SipFirstLogo-removebg.png" width = "200px">
+    <img id = "sip-logo" src = "assets/images/SipFirstLogo-removebg.png" width = "200px">
     <p id = "sub">Mixing your drink...</p>
 </section>
 
@@ -41,10 +41,10 @@
     
         </div>
         <div class = "col-md-3" id = "coffee">
-            <p id = "user-pick-alc">Want to get lit?</p>
+            <p class="user-select" id = "user-pick-alc" value="bar">Want to get lit?</p>
         </div>
         <div class = "col-md-3" id = "alc">
-            <p id = "user-pick-coffee">Need a pick-me-up?</p>
+            <p class="user-select" id = "user-pick-coffee" value="cafe">Need a pick-me-up?</p>
         </div>
         <div class = "col-md-3">
             
@@ -53,7 +53,7 @@
     
     <div class = "row" id = "pic-row">
         <div class = "col-md-12" id = "pic-column">
-            <img id = "alc-picture" src = "images/alcVScoffee-nobg.png" width = "600px">
+            <img id = "alc-picture" src = "assets/images/alcVScoffee-nobg.png" width = "600px">
         </div>
     </div>
 </section>
@@ -82,10 +82,10 @@
                     Price
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a id = "oneD" class="dropdown-item" href="#">$</a>
-                    <a id = "twoD" class="dropdown-item" href="#">$$</a>
-                    <a id = "threeD" class="dropdown-item" href="#">$$$</a>
-                    <a id = "fourD" class="dropdown-item" href="#">$$$$</a>
+                    <a id = "oneD" class="dropdown-item" href="#" value="price1">$</a>
+                    <a id = "twoD" class="dropdown-item" href="#" value="price2">$$</a>
+                    <a id = "threeD" class="dropdown-item" href="#" value="price3">$$$</a>
+                    <a id = "fourD" class="dropdown-item" href="#" value="price4">$$$$</a>
                 </div>
             </div>
         </div>
@@ -95,22 +95,22 @@
                     Location
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a id = "IR" class="dropdown-item" href="#">Inner Richmond</a>
-                    <a id = "OR" class="dropdown-item" href="#">Outer Richmond</a>
-                    <a id = "IS" class="dropdown-item" href="#">Inner Sunset</a>
-                    <a id = "OS" class="dropdown-item" href="#">Outer Sunset</a>
-                    <a id = "FH" class="dropdown-item" href="#">Forrest Hill</a>
-                    <a id = "C" class="dropdown-item" href="#">Castro</a>
-                    <a id = "pacificH" class="dropdown-item" href="#">Pacific Heights</a>
-                    <a id = "P" class="dropdown-item" href="#">Panhandle</a>
-                    <a id = "E" class="dropdown-item" href="#">Excelsior</a>
-                    <a id = "missionD" class="dropdown-item" href="#">Mission District</a>
-                    <a id = "potreroH" class="dropdown-item" href="#">Potrero Hill</a>
-                    <a id = "marinaD" class="dropdown-item" href="#">Marina District</a>
-                    <a id = "F" class="dropdown-item" href="#">Filmore</a>
-                    <a id = "SOMA" class="dropdown-item" href="#">SOMA</a>
-                    <a id = "FiDi" class="dropdown-item" href="#">Financial District</a>
-                    <a id = "NB" class="dropdown-item" href="#">North Beach</a>
+                    <a id = "IR" class="dropdown-item" href="#" value="inner-richmond">Inner Richmond</a>
+                    <a id = "OR" class="dropdown-item" href="#" value="outer-richmond">Outer Richmond</a>
+                    <a id = "IS" class="dropdown-item" href="#" value="inner-sunset">Inner Sunset</a>
+                    <a id = "OS" class="dropdown-item" href="#" value="outer-sunset">Outer Sunset</a>
+                    <a id = "FH" class="dropdown-item" href="#" value="forrest-hill">Forrest Hill</a>
+                    <a id = "C" class="dropdown-item" href="#" value="the-castro">Castro</a>
+                    <a id = "pacificH" class="dropdown-item" href="#" value="pacific-heights">Pacific Heights</a>
+                    <a id = "P" class="dropdown-item" href="#" value="panhandle">Panhandle</a>
+                    <a id = "E" class="dropdown-item" href="#" value="excelsior">Excelsior</a>
+                    <a id = "missionD" class="dropdown-item" href="#" value="mission-district">Mission District</a>
+                    <a id = "potreroH" class="dropdown-item" href="#" value="potrero-hill">Potrero Hill</a>
+                    <a id = "marinaD" class="dropdown-item" href="#" value="marina-district">Marina District</a>
+                    <a id = "F" class="dropdown-item" href="#" value="fillmore">Fillmore</a>
+                    <a id = "SOMA" class="dropdown-item" href="#" value="soma">SOMA</a>
+                    <a id = "FiDi" class="dropdown-item" href="#" value="financial-district">Financial District</a>
+                    <a id = "NB" class="dropdown-item" href="#" value="north-beach">North Beach</a>
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@
         
                 </div>
                 <div class = "col-md-6" id = "sip-logo-column">
-                    <img id = "sip-logo2" src = "images/SipFirstLogo-removebg.png" width = "150px">
+                    <img id = "sip-logo2" src = "assets/images/SipFirstLogo-removebg.png" width = "150px">
                 </div>
                 <div class = "col-md-2">
         
@@ -183,7 +183,7 @@
                     <p>Business Hours: </p>
                     <p>Location: </p>
                     <p>Price: </p>
-                    <img src = "images/yelp-logo.png" width = "40px" height = "40px" > 
+                    <img src = "assets/images/yelp-logo.png" width = "40px" height = "40px" > 
                 </div>
                 <div class = "col-md-1">
         
@@ -217,7 +217,7 @@
                     <p>Business Hours</p>
                     <p>Location</p>
                     <p>Price</p>
-                    <img src = "images/yelp-logo.png" width = "40px" height = "40px" > 
+                    <img src = "assets/images/yelp-logo.png" width = "40px" height = "40px" > 
                 </div>
                 <div class = "col-md-1">
         
@@ -258,7 +258,7 @@
         
                 </div>
                 <div class = "col-md-6" id = "sip-logo-column">
-                    <img id = "sip-logo2" src = "images/SipFirstLogo-removebg.png" width = "150px">
+                    <img id = "sip-logo2" src = "assets/images/SipFirstLogo-removebg.png" width = "150px">
                 </div>
                 <div class = "col-md-2">
         
@@ -295,7 +295,7 @@
                     <p>Business Hours: </p>
                     <p>Location: </p>
                     <p>Price: </p>
-                    <img src = "images/yelp-logo.png" width = "40px" height = "40px" > 
+                    <img src = "assets/images/yelp-logo.png" width = "40px" height = "40px" > 
                 </div>
                 <div class = "col-md-1">
         
@@ -329,7 +329,7 @@
                     <p>Business Hours</p>
                     <p>Location</p>
                     <p>Price</p>
-                    <img src = "images/yelp-logo.png" width = "40px" height = "40px" > 
+                    <img src = "assets/images/yelp-logo.png" width = "40px" height = "40px" > 
                 </div>
                 <div class = "col-md-1">
         
@@ -382,11 +382,12 @@
 
 <!-- Optional JavaScript -->
    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <!-- Link to javascript -->
-<script src="testJS.js"></script>  
+<script src="assets/javascript/script.js"></script>
+<script src="assets/javascript/front-end.js"></script>  
 </body>
 </html>
