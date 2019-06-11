@@ -16,6 +16,8 @@ $("#second-user-input-page").hide();
 //Declare variables
 var alcohol = 0;
 var coffee = 0;
+var tyNextC = 0; 
+var tyNextA = 0; 
 
 //Event handler: when user picks alcohol
 $("#user-pick-alc").on("click",function() {
@@ -45,6 +47,26 @@ if (alcohol === 1){
     $("#second-user-input-page").hide()
     $("#array-drink").show()
 }
+});
+
+//Event handler: when user clicks "thank you, next"
+$("#next-button-1").on("click",function(){
+    tyNextC++
+    console.log(tyNextC)
+    if (tyNextC === 3){
+        $("#array-coffee").hide()
+        $("#google-maps").show()
+
+    }
+});
+
+$("#next-button-2").on("click",function(){
+    tyNextA++
+    console.log(tyNextA)
+    if (tyNextA === 3){
+        $("#array-drink").hide()
+        $("#google-maps").show()
+    }
 });
 
 }); //END document ready function
