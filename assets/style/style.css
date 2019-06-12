@@ -418,7 +418,12 @@
   }
 
   #pajaro1 {
-	  margin-top: -300px; 
+	  margin-top: -200px; 
 	  margin-left: 100px; 
+  }
+
+  #pajaro2 {
+	  margin-top: -300px; 
+	  margin-left: -200px; 
   }
   
