@@ -347,4 +347,78 @@
 			  transform: rotate(360deg);
 	}
   }
+
+  .pajaro{
+	background:black;
+	border-radius: 50% 50% 20% 20%;
+	color:white;
+	line-height:20px;
+	letter-spacing: 2px;
+	font-size:0.8em;
+	text-align:center;
+	position:absolute;
+	top:50%; left:50%;
+	margin-top:-20px; margin-left:-10px;
+	width:15px; height:15px;
+	animation:planeo 0.8s linear infinite;
+	z-index:999;
+  }
+  
+  .pajaro:after,
+  .pajaro:before{
+	content:"";
+	position:absolute;
+	top:50%; left:50%;
+  }
+  
+  /*------------------------------------------------------ bird wings
+  */
+  
+  .pajaro:after{
+	border-radius: 100% 100% 0 0;
+	box-shadow: inset 0px 5px 0 black;
+	width:100px; height:100px;
+	margin-top:-7px; margin-left:-50px;
+	transform-origin: 100% 0%;
+	animation:alas 3s linear infinite;
+  }
+  
+  /*------------------------------------------------------ bird beak
+  */
+  
+  .pajaro:before{
+	background:#FFC37F;
+	border-radius: 100% 0% 20% 0%;
+	margin-top:3px; margin-left:-4px;
+	width:6px; height:6px;
+	transform:rotateZ(45deg);
+  }
+  
+  /*------------------------------------------------------ wings animation
+  */
+  
+  @keyframes alas {
+	50%{
+	  transform:rotateX(-1440deg);
+	}
+  }
+  
+  /*------------------------------------------------------ bird animation
+  */
+  
+  @keyframes planeo {
+	40%{
+	  transform:rotateZ(2deg) translateX(2px) translateY(10px) translateZ(0);
+	  line-height:16px;
+	  font-size:0.6em;
+	}
+	80%{
+	  transform:rotateZ(-2deg) translateX(5px) translateY(8px) translateZ(0);
+	}
+  }
+
+  #pajaro1 {
+	  margin-top: -300px; 
+	  margin-left: 100px; 
+  }
   

@@ -4,8 +4,8 @@ $(document).ready(function() {
 $("#loading-page").show()
 $("#main-page").hide()
 
-setTimeout(function(){$('#loading-page').hide();}, 1000);
-setTimeout(function(){$('#main-page').show();}, 1000);
+setTimeout(function(){$('#loading-page').hide();}, 3000);
+setTimeout(function(){$('#main-page').show();}, 3000);
 
 $("#array-coffee").hide()
 $("#array-drink").hide()
