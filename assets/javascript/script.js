@@ -189,19 +189,19 @@ $(document).ready(function () {
                     yelpLogo.wrap(anchorLogo1)
                     
                     var anchorLogo2 = $("<a>")
-                    anchorLogo2.attr("href", response.businesses[i].url)
+                    anchorLogo2.attr("href", response.businesses[i+1].url)
                     anchorLogo2.attr("target", "_blank")
                     anchorLogo2.append(yelpLogo)
                     
                     businessInfo1.prepend(anchorLogo1)
-                    businessInfo1.prepend(response.businesses[i].price)
-                    businessInfo1.prepend(response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code)
-                    businessInfo1.prepend("Rating: " + response.businesses[i].rating)
-                    
-                    businessInfo2 = $(anchorLogo2)
-                    businessInfo2.prepend(response.businesses[i+1].price)
-                    businessInfo2.prepend(response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code)
-                    businessInfo2.prepend("Rating: " + response.businesses[i+1].rating)
+                    businessInfo1.prepend("Price: " + response.businesses[i].price + "<br><br><br><br><br>")
+                    businessInfo1.prepend("Location: " + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
+                    businessInfo1.prepend("Rating: " + response.businesses[i].rating + "<br>")
+     
+                    businessInfo2.prepend(anchorLogo2)
+                    businessInfo2.prepend("Price: " + response.businesses[i+1].price + "<br><br><br><br><br>")
+                    businessInfo2.prepend("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
+                    businessInfo2.prepend("Rating: " + response.businesses[i+1].rating + "<br>")
         
               });
              
@@ -212,24 +212,31 @@ $(document).ready(function () {
          
        }); 
 
-        $("#next-button-1").on("click",function(){
-            tyNextC++
-            printData();
-            i+2;
-            console.log(tyNextC)
-            if (tyNextC === 3){
-                $("#array-coffee").hide()
-                $("#google-maps").show()
-        
-            }
-        });
+      
+       $("#next-button-1").on("click",function(){
+        tyNextC++
+        console.log("worked!")
+        console.log(tyNextC)
+        printData()
+
+        i = i+2;
+        console.log(i)
+        if (tyNextC === 3){
+            $("#array-coffee").hide()
+            $("#google-maps").show()
+    
+        }
+    });
         
         $("#next-button-2").on("click",function(){
             tyNextA++
-            printData();
-            console.log(responseData.businesses[i])
-            i+2;
+            console.log("worked!")
             console.log(tyNextA)
+            printData()
+
+
+            i = i+2;
+            console.log(i)
             if (tyNextA === 3){
                 $("#array-drink").hide()
                 $("#google-maps").show()
