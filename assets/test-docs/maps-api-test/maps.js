@@ -188,29 +188,62 @@
     //////////////////////////////////////////////////////////////////////////////////////////////
     // google.maps.event.trigger(map, 'resize'); // code to redraw jaascript map
     ///////////////////////////
-   var myLocation = {lat:37.8087, lng:-122.4098};
+
+    //Set variables here to change what values we use to generate the map below.
+    //We'll do this twice to generate two maps with different markers.
+
+    //For the large map, we'll do something similar but instead we'll need to grab the 
+
+    var geocoder;
+    var myLocation = {lat:37.8087, lng:-122.4098}; //this will be the variable for where the map will be centered (also where we want to drop our pin markers.coords)
+    var infoContent = "<h1> Business name goes here.</h1>"
+    var address = "933 Cabrillo St. San Francisco, CA"
+
 
     function initMap(){
+        var map = new google.maps.Map(document.getElementById("map"), options)
+        
+        // Creates new map object
         var options = { // Variable for google maps options
             zoom: 16, // Zoom preferabble for seeing all streets and businesses
-            center: myLocation // map centered at variable location (for app, should be user's location)
+            position: myLocation // map centered at variable location (for app, should be user's location)
         }
-        // Creates new map object
-        var map = new google.maps.Map(document.getElementById("map"), options)
+        // geocoder = new google.maps.Geocoder(); //variable to use google geocoder to parse addresses into coordinates
+        
+        // if (geocoder) {
+        //     geocoder.geocode({
+        //         'address': address //takes our set variable address
+        //     }, function (results, status) {
+        //         if (status == google.maps.GeocoderStatus.OK) {
+        //             if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+        //                 map.setCenter(results[0].geometry.location);
+        //                 console.log(results[0].geometry.location)
+        //             }
+        //         }
+        //     })
+        // }
+        
 
 
         //Array of Markers
         var markers = [
             {
             coords:{lat:37.8015, lng:-122.3975},
-            content: "Exploratorium"
+            content: infoContent 
             },
             {
             coords:{lat:37.8087, lng:-122.4098},
             iconImage:"https://img.icons8.com/cotton/64/000000/cafe.png",
             content: "<h1>PIER 39</h1>"
+            },
+            {
+            coords: myLocation, //uses the address as location instead of coordinates
+            map:map,
+            title: address
             }
         ];
+
+        console.log(markers[0])
 
         // Loop through markers
         for (var i = 0; i < markers.length; i++) {
@@ -220,9 +253,9 @@
 
         // Add Marker Function
         function addMarker(props){
-            var marker = new google.maps.Marker({
+            var marker= new google.maps.Marker({
                 position: props.coords, // position of the marker
-                map: map, // links which map this marker is placed on (#map)
+                map: map // links which map this marker is placed on (#map)
                 // icon: props.iconImage // link to marker img
             });
 

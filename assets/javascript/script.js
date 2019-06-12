@@ -26,20 +26,22 @@ $(document).ready(function () {
         marinaDistrict: "37.8038433,-122.4418518"
     };
     
-    var parseCoords = function(neighboorhood){ // Takes string from neighboorhood variables and creates lat/lng coordinates
-        neighboorhood.split(",")[0] = queryParams.latitude
-        neighboorhood.split(",")[1] = queryParams.longitude
-        queryParams.radius = "1500"
-    } 
-
+    
     // Default values for queryUrl
     var baseUrl = "https://api.yelp.com/v3/businesses/search?";
-    var queryParams = {"radius": "3000"};
+    var queryParams = {"radius": "1500"};
     queryParams.sort_by = "rating"
-    queryParams.latitude = "37.8087";  // Default location is San Franscisco
-    queryParams.longitude = "-122.4098";
+    queryParams.latitude;  // Default location is San Franscisco
+    queryParams.longitude;
     queryParams.open_now = true;
     queryParams.price = "1";
+ 
+    var parseCoords = function(neighboorhood){ // Takes string from neighboorhood variables and creates lat/lng coordinates
+        var parseLat = neighboorhood.split(",")[0]
+        queryParams.latitude = parseLat
+        var parseLng = neighboorhood.split(",")[1]
+        queryParams.longitude = parseLng
+    } 
     
     $(".user-select, .dropdown-item").on("click", function (){ //event listener to select query paramaters
         $("#render-businesses").empty(); //empties previous search query
