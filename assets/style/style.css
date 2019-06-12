@@ -22,7 +22,7 @@
 
 #second-user-input-page {
     background-image: 
-    linear-gradient(90deg, rgb(26, 40, 235) 50%, rgb(245, 233, 195) 50%)
+    linear-gradient(90deg, rgb(49, 60, 219) 50%, rgb(245, 233, 195) 50%)
 }
 
 #loading-page {
@@ -144,6 +144,7 @@
 	width: 200px; 
 	font-family: 'Pacifico', cursive;
 	color: white; 
+	font-size: 30px; 
 }
 
 #go-back {
@@ -161,6 +162,8 @@
 	font-family: 'Pacifico', cursive;
 	width: 70px; 
 	border-radius: 12px; 
+	font-size: 30px; 
+	color: black; 
 }
 
 #option-content {
