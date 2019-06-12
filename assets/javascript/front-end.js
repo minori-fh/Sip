@@ -74,3 +74,5 @@ $("#next-button-2").on("click",function(){
         $("#google-maps").show()
     }
 });
+
+}); //END document ready function
