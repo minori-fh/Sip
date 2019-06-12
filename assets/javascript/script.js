@@ -34,7 +34,7 @@ $(document).ready(function () {
     queryParams.latitude;  // Default location is San Franscisco
     queryParams.longitude;
     queryParams.open_now = true;
-    queryParams.price = "1";
+    queryParams.price = "3";
  
     var parseCoords = function(neighboorhood){ // Takes string from neighboorhood variables and creates lat/lng coordinates
         var parseLat = neighboorhood.split(",")[0]
@@ -65,18 +65,27 @@ $(document).ready(function () {
         //Price Range
         if (userSelect === "price1") {
             queryParams.price = "1";
+            queryParams.latitude = "37.8087"
+            queryParams.longitude = "-122.4098"
+            
     
             console.log(queryUrl)
         } else if (userSelect ==="price2") {
             queryParams.price = "2";
+            queryParams.latitude = "37.8087"
+            queryParams.longitude = "-122.4098"
     
             console.log(queryUrl)
         } else if (userSelect ==="price3") {
             queryParams.price = "3";
+            queryParams.latitude = "37.8087"
+            queryParams.longitude = "-122.4098"
     
             console.log(queryUrl)
         } else if (userSelect ==="price4") {
             queryParams.price = "4";
+            queryParams.latitude = "37.8087"
+            queryParams.longitude = "-122.4098"
     
             console.log(queryUrl)
         }
@@ -226,7 +235,7 @@ $(document).ready(function () {
             $("#google-maps").show()
     
         }
-    });
+        });
         
         $("#next-button-2").on("click",function(){
             tyNextA++
@@ -241,7 +250,7 @@ $(document).ready(function () {
                 $("#array-drink").hide()
                 $("#google-maps").show()
             }
-    });
+        });
 })
 
 
