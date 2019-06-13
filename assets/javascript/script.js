@@ -308,6 +308,3 @@ $("#go-home").on("click",function(e) {
 });
 }) //END: document ready function 
 
-
-$("#map").css("position","fixed !important");
-}) //END: document ready function 
