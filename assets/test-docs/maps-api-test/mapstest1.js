@@ -1,13 +1,13 @@
-window.gMapsCallback = function(){
-  $(window).trigger('gMapsLoaded');
-}
+// window.gMapsCallback = function(){
+//   $(window).trigger('gMapsLoaded');
+// }
 
-function loadGoogleMaps(){
-  var script_tag = document.createElement('script');
-  script_tag.setAttribute("type","text/javascript");
-  script_tag.setAttribute("src","http://maps.google.com/maps/api/js?sensor=false&callback=gMapsCallback");
-  (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(script_tag);
-}
+// function loadGoogleMaps(){
+//   var script_tag = document.createElement('script');
+//   script_tag.setAttribute("type","text/javascript");
+//   script_tag.setAttribute("src","http://maps.google.com/maps/api/js?sensor=false&callback=gMapsCallback");
+//   (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(script_tag);
+// }
 
 var geocoder;
 
@@ -97,5 +97,3 @@ function initMap() {
     }
   }
 
-  $(window).bind('gMapsLoaded', initialize);
-    loadGoogleMaps();
