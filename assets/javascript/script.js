@@ -63,8 +63,8 @@ function printData(){
       }).then(function (response) {
         console.log(response)
 
-            var businessInfo1 = $("#description-1")
-            var businessInfo2 = $("#description-2")
+            var businessInfo1 = $(".description-1")
+            var businessInfo2 = $(".description-2")
             businessInfo1.empty()
             businessInfo2.empty()
 
@@ -75,19 +75,13 @@ function printData(){
             // TODO: FORMATTING FOR DYNAMICALLY APPENDED INFORMATION.
                 console.log(i)
 
-                var img1 = $("#img-1")
+                var img1 = $(".img-1")
                 img1.addClass("thumbnail") // TODO: Add CSS for formatting images
                 img1.attr("src", response.businesses[i].image_url)
                 
-                var img2 = $("#img-2")
+                var img2 = $(".img-2")
                 img2.addClass("thumbnail") // TODO: Add CSS for formatting images
                 img2.attr("src", response.businesses[i+1].image_url)
-    
-                var businessName1 = $(".name-1") // TODO: Position bussiness name on top of business image; Maybe add white text stroke for text to pop out
-                businessName1.text(response.businesses[i].name)
-    
-                var businessName2 = $(".name-2") // TODO: Position bussiness name on top of business image; Maybe add white text stroke for text to pop out
-                businessName2.text(response.businesses[i+1].name)
                 
                 var yelpLogo = $('<img>')
                 yelpLogo.attr("src", "assets/images/yelp-logo.png")
