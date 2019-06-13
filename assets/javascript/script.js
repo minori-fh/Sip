@@ -241,7 +241,7 @@ function printData(){
                 
                 address2Object = ("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>")
                 
-                businessInfo2.prepend("<b> Rating: <b>" + response.businesses[i+1].rating + "<br>")
+                businessInfo2.prepend("<b> Rating: </b>" + response.businesses[i+1].rating + "<br>")
                 businessInfo2.prepend("<span style = 'font-size: 20px'><b>" + response.businesses[i+1].name + "</b></span><br><br>")
                 $(".description-2").css("background-color", "white")
                 $(".description-2").css("height", "220px")
@@ -284,7 +284,7 @@ $(".dropdown-price").on("click", function(){
         $("#second-user-input-page").hide()
         $("#array-coffee").show()
     }
-    
+
 });
 
 $(".dropdown-item").on("click", function(){
