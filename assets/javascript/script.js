@@ -222,37 +222,71 @@ $(document).ready(function () {
          
        }); 
 
-      
-       $("#next-button-1").on("click",function(){
-        tyNextC++
-        console.log("worked!")
-        console.log(tyNextC)
+
+// Event handler
+$(".category").on("click",function(){
+    category = $(this).attr("data-value")
+
+    if (category === "bar"){
+        bar = 1; 
+        cafe = 0; 
+    } else if (category === "cafe"){
+        bar = 0;
+        cafe = 1
+    }
+});
+
+$(".dropdown-price").on("click", function(){
+    userSelectPrice = $(this).attr("data-value")
+
+    if (userSelectPrice != ""){
+        key = "default"
+        printData();
+        i = 0
+    }
+});
+
+$(".dropdown-item").on("click", function(){
+    key = $(this).attr("data-value")
+
+    if (key != ""){
+        userSelectPrice = "3"
+        printData();
+        i = 0
+    }
+});
+
+$("#next-button-1").on("click", function(){
+    tynC++
+
+    if (tynC === 1){
+        i = 2
         printData()
+    } else if (tynC === 2){
+        i = 4
+        printData()
+    } else if (tynC === 3){
+        $("#array-coffee").hide()
+        $("#google-maps").show()
+    }
 
-        i = i+2;
-        console.log(i)
-        if (tyNextC === 3){
-            $("#array-coffee").hide()
-            $("#google-maps").show()
+});
     
-        }
-        });
-        
-        $("#next-button-2").on("click",function(){
-            tyNextA++
-            console.log("worked!")
-            console.log(tyNextA)
-            printData()
+$("#next-button-2").on("click", function(){
+    tynA++
 
-
-            i = i+2;
-            console.log(i)
-            if (tyNextA === 3){
-                $("#array-drink").hide()
-                $("#google-maps").show()
-            }
-        });
-})
+    if (tynA ===  1){
+        i = 2
+        printData()
+    } else if (tynA === 2){
+        i = 4
+        printData()
+    } else if (tynA === 3){
+        $("#array-coffee").hide()
+        $("#google-maps").show()
+    }
+});
+}) //END: document ready function 
 
 
     
