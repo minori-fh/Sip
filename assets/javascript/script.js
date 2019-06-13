@@ -298,8 +298,8 @@ $("#next-button-1").on("click", function(){
         i = 4;
         printData()
     } else if (tynC === 3){
-        $("#array-coffee").hide()
-        $("#google-maps").show()
+        $("#array-coffee").hide();
+        $("#google-maps").show();
     }
 
 });
