@@ -223,26 +223,26 @@ function printData(){
                 // Option 1
                 businessInfo1.prepend(anchorLogo1)
                 businessInfo1.prepend("<b> Review Count: </b>" + response.businesses[i].review_count + "<br>")
-                businessInfo1.prepend("<b> Price: </b>" + response.businesses[i].price + "<br><br>")
+                businessInfo1.prepend("<b> Price: </b>" + response.businesses[i].price + "<br>")
                 businessInfo1.prepend("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
                 
                 address1Object = ("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
                 
                 businessInfo1.prepend("<b> Rating: </b>" + response.businesses[i].rating + "<br>")
-                businessInfo1.prepend("<span style = 'font-size: 30px'><b>" + response.businesses[i].name + "</b></span><br><br>")
+                businessInfo1.prepend("<span style = 'font-size: 20px'><b>" + response.businesses[i].name + "</b></span><br><br>")
                 $(".description-1").css("background-color", "white")
                 $(".description-1").css("height", "220px")
     
                 // Option 2
                 businessInfo2.prepend(anchorLogo2)
                 businessInfo2.prepend("<b> Review Count: </b>" + response.businesses[i+1].review_count + "<br>")
-                businessInfo2.prepend("<b> Price: </b>" + response.businesses[i+1].price + "<br><br>")
+                businessInfo2.prepend("<b> Price: </b>" + response.businesses[i+1].price + "<br>")
                 businessInfo2.prepend("<b> Location: </b>" + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>")
                 
                 address2Object = ("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>")
                 
-                businessInfo2.prepend("<b> Rating: <b>" + response.businesses[i+1].rating + "<br>")
-                businessInfo2.prepend("<span style = 'font-size: 30px'><b>" + response.businesses[i+1].name + "</b></span><br><br>")
+                businessInfo2.prepend("<b> Rating: </b>" + response.businesses[i+1].rating + "<br>")
+                businessInfo2.prepend("<span style = 'font-size: 20px'><b>" + response.businesses[i+1].name + "</b></span><br><br>")
                 $(".description-2").css("background-color", "white")
                 $(".description-2").css("height", "220px")
 
@@ -275,6 +275,16 @@ $(".dropdown-price").on("click", function(){
         printData();
         i = 0
     }
+
+
+    if (bar === 1){
+        $("#second-user-input-page").hide()
+        $("#array-drink").show()
+    } else if (cafe === 1){
+        $("#second-user-input-page").hide()
+        $("#array-coffee").show()
+    }
+
 });
 
 $(".dropdown-item").on("click", function(){
@@ -284,6 +294,15 @@ $(".dropdown-item").on("click", function(){
         userSelectPrice = "3"
         printData();
         i = 0
+    }
+
+
+    if (bar === 1){
+        $("#second-user-input-page").hide()
+        $("#array-drink").show()
+    } else if (cafe === 1){
+        $("#second-user-input-page").hide()
+        $("#array-coffee").show()
     }
 
 });
@@ -341,5 +360,20 @@ $("#go-home").on("click",function(e) {
     bar = 0; 
     cafe = 0; 
 });
+
+$("#alc-picture").on("click",function(e) {
+    var pWidth = $(this).innerWidth();
+    var pOffset = $(this).offset(); 
+    var x = e.pageX - pOffset.left;
+    if(pWidth/2 > x){
+        bar = 1
+        cafe = 0
+    } else{
+        bar = 0
+        cafe = 1
+    }
+});
+
+
 }) //END: document ready function 
 
