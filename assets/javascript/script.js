@@ -324,11 +324,11 @@ $("#alc-picture").on("click",function(e) {
     var pOffset = $(this).offset(); 
     var x = e.pageX - pOffset.left;
     if(pWidth/2 > x){
-        bar = 1
-        cafe = 0
+        bar = 1;
+        cafe = 0;
     } else{
-        bar = 0
-        cafe = 1
+        bar = 0;
+        cafe = 1;
     }
 });
 
