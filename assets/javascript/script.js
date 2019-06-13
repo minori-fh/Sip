@@ -68,7 +68,7 @@ var address2 = address2Object;
 
 
             var infowindow2 = new google.maps.InfoWindow({
-            content: '<b>' + address2 + '</b>',
+            content: `<b>${address2}</b>`,
             size: new google.maps.Size(150, 50)
             });
 
