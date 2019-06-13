@@ -43,7 +43,7 @@ function printData(){
     console.log(latitude)
     console.log(longitude)
 
-    var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&open_now=true&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
+    var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
     console.log(queryUrl)
 
     jQuery.ajaxPrefilter(function (options) {
