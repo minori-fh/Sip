@@ -1,239 +1,189 @@
 
 $(document).ready(function () {
-    var i = 0;
-    var tyNextC = 0; 
-    var tyNextA = 0; 
 
+// Variables to be put into queryURL
+var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for location search query
+    innerRichmond: "37.7799,-122.4647",
+    outerRichmond: "37.7777,-122.4953",
+    innerSunset: "37.7607,-122.4680",
+    outerSunset: "37.7553684,,-122.5024254",
+    forestHill: "37.7476842,-122.4670707",
+    theCastro: "37.7626682,-122.4372717",
+    pacificHeights: "37.7925002,-122.4368397",
+    panhandle: "37.7720591,-122.4501577",
+    excelsior: "37.7241506,-122.4297002",
+    missionDistrict: "37.7599213,-122.4256016",
+    potreroHill: "37.7582827,-122.4013887",
+    fillmoreDistrict: "37.7808194,-122.4340845",
+    soMa: "37.7808323,-122.4111729",
+    financialDistrict: "37.7927815,-122.4054696",
+    northBeach: "37.8047205,-122.4125737",
+    marinaDistrict: "37.8038433,-122.4418518",
+    default: "37.8087,-122.4098" 
+};
 
-    // Variables to be put into queryURL
-
-    var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for location search query
-        innerRichmond: "37.7799,-122.4647",
-        outerRichmond: "37.7777,-122.4953",
-        innerSunset: "37.7607,-122.4680",
-        outerSunset: "37.7553684,,-122.5024254",
-        forestHill: "37.7476842,-122.4670707",
-        theCastro: "37.7626682,-122.4372717",
-        pacificHeights: "37.7925002,-122.4368397",
-        panhandle: "37.7720591,-122.4501577",
-        excelsior: "37.7241506,-122.4297002",
-        missionDistrict: "37.7599213,-122.4256016",
-        potreroHill: "37.7582827,-122.4013887",
-        fillmoreDistrict: "37.7808194,-122.4340845",
-        soMa: "37.7808323,-122.4111729",
-        financialDistrict: "37.7927815,-122.4054696",
-        northBeach: "37.8047205,-122.4125737",
-        marinaDistrict: "37.8038433,-122.4418518"
-    };
+var tynA = 0;
+var tynC = 0;
     
-    var parseCoords = function(neighboorhood){ // Takes string from neighboorhood variables and creates lat/lng coordinates
-        neighboorhood.split(",")[0] = queryParams.latitude
-        neighboorhood.split(",")[1] = queryParams.longitude
-        queryParams.radius = "1500"
-    } 
-
-    // Default values for queryUrl
-    var baseUrl = "https://api.yelp.com/v3/businesses/search?";
-    var queryParams = {"radius": "3000"};
-    queryParams.sort_by = "rating"
-    queryParams.latitude = "37.8087";  // Default location is San Franscisco
-    queryParams.longitude = "-122.4098";
-    queryParams.open_now = true;
-    queryParams.price = "1";
     
-    $(".user-select, .dropdown-item").on("click", function (){ //event listener to select query paramaters
-        $("#render-businesses").empty(); //empties previous search query
+//Function declaration
+function printData(){
+    var price = userSelectPrice
+    var neighborhood = sanFrancisco[key]
+        var latitude = neighborhood.split(",")[0]
+        var longitude = neighborhood.split(",")[1]
 
-        var userSelect = $(this).attr("data-value")
-        console.log(userSelect)
+    if (bar === 1){
+        var category = "bar"
+    } else if (cafe === 1){
+        var category = "cafe"
+    }
 
-        var queryUrl = (baseUrl + $.param(queryParams))
-        console.log(queryUrl)
-         //Type of search
-         if (userSelect === "bar"){
-            queryParams.category = "bar"
+    console.log(category)
+    console.log(price)
+    console.log(latitude)
+    console.log(longitude)
 
-            console.log(queryUrl)
-        } else if (userSelect === "cafe") {
-            queryParams.category = "cafe"
+    var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&open_now=true&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
+    console.log(queryUrl)
 
-            console.log(queryUrl)
+    jQuery.ajaxPrefilter(function (options) {
+        if (options.crossDomain && jQuery.support.cors) {
+            options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
         }
-
-        //Price Range
-        if (userSelect === "price1") {
-            queryParams.price = "1";
-    
-            console.log(queryUrl)
-        } else if (userSelect ==="price2") {
-            queryParams.price = "2";
-    
-            console.log(queryUrl)
-        } else if (userSelect ==="price3") {
-            queryParams.price = "3";
-    
-            console.log(queryUrl)
-        } else if (userSelect ==="price4") {
-            queryParams.price = "4";
-    
-            console.log(queryUrl)
-        }
-
-        //Location Filter
-        if (userSelect === "inner-richmond") {
-            parseCoords(sanFrancisco.innerRichmond)
-
-            console.log(queryUrl)
-        } else if (userSelect === "outer-richmond") {
-            parseCoords(sanFrancisco.outerRichmond)
- 
-        } else if (userSelect === "inner-sunset") {
-            parseCoords(sanFrancisco.innerSunset)
- 
-        } else if (userSelect === "outer-sunset") {
-            parseCoords(sanFrancisco.outerSunset)
- 
-        } else if (userSelect === "forest-hill") {
-            parseCoords(sanFrancisco.forestHill)
- 
-        } else if (userSelect === "the-castro") {
-            parseCoords(sanFrancisco.theCastro)
- 
-        } else if (userSelect === "pacific-heights") {
-            parseCoords(sanFrancisco.pacificHeights)
- 
-        } else if (userSelect === "panhandle") {
-            parseCoords(sanFrancisco.panhandle)
- 
-        } else if (userSelect === "excelsior") {
-            parseCoords(sanFrancisco.excelsior)
- 
-        } else if (userSelect === "mission-district") {
-            parseCoords(sanFrancisco.missionDistrict)
- 
-        } else if (userSelect === "potrero-hill") {
-            parseCoords(sanFrancisco.potreroHill)
- 
-        } else if (userSelect === "fillmore") {
-            parseCoords(sanFrancisco.fillmoreDistrict)
- 
-        } else if (userSelect === "soma") {
-            parseCoords(sanFrancisco.soMa)
- 
-        } else if (userSelect === "financial-district") {
-            parseCoords(sanFrancisco.financialDistrict)
- 
-        } else if (userSelect === "north-beach") {
-            parseCoords(sanFrancisco.northBeach)
- 
-        } else if (userSelect === "marina-district") {
-            parseCoords(sanFrancisco.marinaDistrict)
- 
-        }
-
-        jQuery.ajaxPrefilter(function (options) {
-            if (options.crossDomain && jQuery.support.cors) {
-                options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-            }
-        });
-        
-        
-        queryUrl = (baseUrl + $.param(queryParams)) // Consolidated GET url with updated variables after user selection
-        console.log(queryUrl)
-        
-
-
-        //Ajax call to Yelp API
-         var printData = function() {
-             $.ajax({
-                url: queryUrl,
-                method: "GET",
-                      
-                headers: {
-                  authorization: "Bearer KQWhz9_RIh91MBjFk0ieWlqw9hOdrfJPFDZsGeAQcd3xPc9KV57sSDZBxftr2vfBqFjgcq2nBuas8lZ8wVDWHbtYQQFLpneMHocF27Tk_43hgOjMY-fT2hnGt1P9XHYx"
-                }
-              }).then(function (response) {
-                console.log(response)
-     
-                    var businessInfo1 = $(".description-1")
-                    var businessInfo2 = $(".description-2")
-                    businessInfo1.empty()
-                    businessInfo2.empty()
-     
-                    // TODO: FORMATTING FOR DYNAMICALLY APPENDED INFORMATION.
-     
-                    var img1 = $(".img-1")
-                    img1.addClass("thumbnail") // TODO: Add CSS for formatting images
-                    img1.attr("src", response.businesses[i].image_url)
-                    
-                    var img2 = $(".img-2")
-                    img2.addClass("thumbnail") // TODO: Add CSS for formatting images
-                    img2.attr("src", response.businesses[i+1].image_url)
-     
-                    var businessName1 = $(".name-1") // TODO: Position bussiness name on top of business image; Maybe add white text stroke for text to pop out
-                    businessName1.text(response.businesses[i].name)
-        
-                    var businessName2 = $(".name-2") // TODO: Position bussiness name on top of business image; Maybe add white text stroke for text to pop out
-                    businessName2.text(response.businesses[i+1].name)
-                    
-                    var yelpLogo = $('<img>')
-                    yelpLogo.attr("src", "assets/images/yelp-logo.png")
-                    yelpLogo.attr("width", "40px")
-                    
-                    var anchorLogo1 = $("<a>")
-                    anchorLogo1.attr("href", response.businesses[i].url)
-                    anchorLogo1.attr("target", "_blank")
-                    anchorLogo1.append(yelpLogo)
-                    yelpLogo.wrap(anchorLogo1)
-                    
-                    var anchorLogo2 = $("<a>")
-                    anchorLogo2.attr("href", response.businesses[i].url)
-                    anchorLogo2.attr("target", "_blank")
-                    anchorLogo2.append(yelpLogo)
-                    
-                    businessInfo1.prepend(anchorLogo1)
-                    businessInfo1.prepend(response.businesses[i].price)
-                    businessInfo1.prepend(response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code)
-                    businessInfo1.prepend("Rating: " + response.businesses[i].rating)
-                    
-                    businessInfo2 = $(anchorLogo2)
-                    businessInfo2.prepend(response.businesses[i+1].price)
-                    businessInfo2.prepend(response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code)
-                    businessInfo2.prepend("Rating: " + response.businesses[i+1].rating)
-        
-              });
-             
-        } 
-        
-        printData();
-        i+2;
-         
-       }); 
-
-        $("#next-button-1").on("click",function(){
-            tyNextC++
-            printData();
-            i+2;
-            console.log(tyNextC)
-            if (tyNextC === 3){
-                $("#array-coffee").hide()
-                $("#google-maps").show()
-        
-            }
-        });
-        
-        $("#next-button-2").on("click",function(){
-            tyNextA++
-            printData();
-            console.log(responseData.businesses[i])
-            i+2;
-            console.log(tyNextA)
-            if (tyNextA === 3){
-                $("#array-drink").hide()
-                $("#google-maps").show()
-            }
     });
-})
+
+    $.ajax({
+        url: queryUrl,
+        method: "GET",
+              
+        headers: {
+          authorization: "Bearer KQWhz9_RIh91MBjFk0ieWlqw9hOdrfJPFDZsGeAQcd3xPc9KV57sSDZBxftr2vfBqFjgcq2nBuas8lZ8wVDWHbtYQQFLpneMHocF27Tk_43hgOjMY-fT2hnGt1P9XHYx"
+        }
+      }).then(function (response) {
+        console.log(response)
+
+            var businessInfo1 = $(".description-1")
+            var businessInfo2 = $(".description-2")
+            businessInfo1.empty()
+            businessInfo2.empty()
+
+            console.log(response.businesses[0].image_url)
+            console.log(response.businesses[1].image_url)
+            console.log(response.businesses.length)
+
+            // TODO: FORMATTING FOR DYNAMICALLY APPENDED INFORMATION.
+                console.log(i)
+
+                var img1 = $(".img-1")
+                img1.addClass("thumbnail") // TODO: Add CSS for formatting images
+                img1.attr("src", response.businesses[i].image_url)
+                
+                var img2 = $(".img-2")
+                img2.addClass("thumbnail") // TODO: Add CSS for formatting images
+                img2.attr("src", response.businesses[i+1].image_url)
+                
+                var yelpLogo = $('<img>')
+                yelpLogo.attr("src", "assets/images/yelp-logo.png")
+                yelpLogo.attr("width", "40px")
+                
+                var anchorLogo1 = $("<a>")
+                anchorLogo1.attr("href", response.businesses[i].url)
+                anchorLogo1.attr("target", "_blank")
+                anchorLogo1.append(yelpLogo)
+                yelpLogo.wrap(anchorLogo1)
+                
+                var anchorLogo2 = $("<a>")
+                anchorLogo2.attr("href", response.businesses[i+1].url)
+                anchorLogo2.attr("target", "_blank")
+                anchorLogo2.append(yelpLogo)
+                
+                businessInfo1.prepend(anchorLogo1)
+                businessInfo1.prepend("Review Count: " + response.businesses[i].review_count + "<br>")
+                businessInfo1.prepend("Price: " + response.businesses[i].price + "<br><br>")
+                businessInfo1.prepend("Location: " + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
+                businessInfo1.prepend("Rating: " + response.businesses[i].rating + "<br>")
+                businessInfo1.prepend(response.businesses[i].name + "<br><br>")
+                $(".description-1").css("background-color", "white")
+                $(".description-1").css("height", "220px")
+    
+                businessInfo2.prepend(anchorLogo2)
+                businessInfo2.prepend("Review Count: " + response.businesses[i+1].review_count + "<br>")
+                businessInfo2.prepend("Price: " + response.businesses[i+1].price + "<br><br>")
+                businessInfo2.prepend("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
+                businessInfo2.prepend("Rating: " + response.businesses[i+1].rating + "<br>")
+                businessInfo2.prepend(response.businesses[i+1].name + "<br><br>")
+                $(".description-2").css("background-color", "white")
+                $(".description-2").css("height", "220px")
+
+      }); //END ajax call
+
+} //END: function printData
+
+// Event handlers
+$(".category").on("click",function(){
+    category = $(this).attr("data-value")
+
+    if (category === "bar"){
+        bar = 1; 
+        cafe = 0; 
+    } else if (category === "cafe"){
+        bar = 0;
+        cafe = 1
+    }
+});
+
+$(".dropdown-price").on("click", function(){
+    userSelectPrice = $(this).attr("data-value")
+
+    if (userSelectPrice != ""){
+        key = "default"
+        printData();
+        i = 0
+    }
+});
+
+$(".dropdown-item").on("click", function(){
+    key = $(this).attr("data-value")
+
+    if (key != ""){
+        userSelectPrice = "3"
+        printData();
+        i = 0
+    }
+});
+
+$("#next-button-1").on("click", function(){
+    tynC++
+
+    if (tynC === 1){
+        i = 2
+        printData()
+    } else if (tynC === 2){
+        i = 4
+        printData()
+    } else if (tynC === 3){
+        $("#array-coffee").hide()
+        $("#google-maps").show()
+    }
+
+});
+    
+$("#next-button-2").on("click", function(){
+    tynA++
+
+    if (tynA ===  1){
+        i = 2
+        printData()
+    } else if (tynA === 2){
+        i = 4
+        printData()
+    } else if (tynA === 3){
+        $("#array-coffee").hide()
+        $("#google-maps").show()
+    }
+});
+}) //END: document ready function 
 
 
     
