@@ -561,6 +561,13 @@
 	100% {
 	  transform: translateY(0) rotate(-45deg);
 	}
-  }
+	}
+	
+	#go-home{
+		font-family: 'Pacifico', cursive; 
+		font-size: 30px; 
+		margin-top: 5px; 
+
+	}
 
  
