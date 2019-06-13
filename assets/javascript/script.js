@@ -166,8 +166,8 @@ function printData(){
     
     // ***QUERY URL W/O OPEN NOW***
 
-    var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
-    console.log(queryUrl)
+    var queryUrl = `https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&price=${price}&category=${category}&latitude=${latitude}&longitude=${longitude}`;
+    console.log(queryUrl);
 
     jQuery.ajaxPrefilter(function (options) {
         if (options.crossDomain && jQuery.support.cors) {
