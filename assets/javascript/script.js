@@ -17,8 +17,11 @@ var address2 = "Vin Debut, San Francisco, CA";
     navigationControl: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    map1 = new google.maps.Map(document.getElementById("map-1"), myOptions);
-    map2 = new google.maps.Map(document.getElementById("gm-large"), myOptions);
+    map1 = new google.maps.Map(document.getElementById("map-1b"), myOptions);
+    map2 = new google.maps.Map(document.getElementById("map-2b"), myOptions);
+    map3 = new google.maps.Map(document.getElementById("map-1a"), myOptions);
+    map4 = new google.maps.Map(document.getElementById("map-2a"), myOptions);
+    map5 = new google.maps.Map(document.getElementById("gm-large"), myOptions);
 
 
     if (geocoder) {
@@ -87,8 +90,9 @@ var address2 = "Vin Debut, San Francisco, CA";
     }
 }
 
-    
+
 $(document).ready(function () {
+    $("#map-1b").css("position", "none !important")
 // Variables to be put into queryURL
 var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for location search query
     innerRichmond: "37.7799,-122.4647",
@@ -290,4 +294,6 @@ $("#alc-picture").on("click",function(e) {
         cafe = 1
     }
 });
+
+$("#map").css("position","fixed !important");
 }) //END: document ready function 
