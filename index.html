@@ -43,10 +43,10 @@
     
         </div>
         <div class = "col-md-3" id = "coffee">
-            <p class="user-select" id = "user-pick-alc" data-value="bar">Want to get lit?</p>
+            <p class="category" id = "user-pick-alc" data-value="bar">Want to get lit?</p>
         </div>
         <div class = "col-md-3" id = "alc">
-            <p class="user-select" id = "user-pick-coffee" data-value="cafe">Need a pick-me-up?</p>
+            <p class="category" id = "user-pick-coffee" data-value="cafe">Need a pick-me-up?</p>
         </div>
         <div class = "col-md-3">
             
@@ -83,11 +83,11 @@
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="ddPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Price
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a id = "oneD" class="dropdown-item" href="#" data-value="price1">$ Strething my dollar</a>
-                    <a id = "twoD" class="dropdown-item" href="#" data-value="price2">$$ Ballin' on a budget</a>
-                    <a id = "threeD" class="dropdown-item" href="#" data-value="price3">$$$ Treating myself</a>
-                    <a id = "fourD" class="dropdown-item" href="#" data-value="price4">$$$$ I'm rich</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> 
+                    <a id = "oneD" class="dropdown-price" href="#" data-value="1">$ Stretching my dollar</a>
+                    <a id = "twoD" class="dropdown-price" href="#" data-value="2">$$ Ballin' on a budget</a>
+                    <a id = "threeD" class="dropdown-price" href="#" data-value="3">$$$ Treating myself</a>
+                    <a id = "fourD" class="dropdown-price" href="#" data-value="4">$$$$ I'm rich</a>
                 </div>
             </div>
             
@@ -99,22 +99,22 @@
                     Location
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a id = "IR" class="dropdown-item" href="#" data-value="inner-richmond">Inner Richmond</a>
-                    <a id = "OR" class="dropdown-item" href="#" data-value="outer-richmond">Outer Richmond</a>
-                    <a id = "IS" class="dropdown-item" href="#" data-value="inner-sunset">Inner Sunset</a>
-                    <a id = "OS" class="dropdown-item" href="#" data-value="outer-sunset">Outer Sunset</a>
-                    <a id = "FH" class="dropdown-item" href="#" data-value="forrest-hill">Forrest Hill</a>
-                    <a id = "C" class="dropdown-item" href="#" data-value="the-castro">Castro</a>
-                    <a id = "pacificH" class="dropdown-item" href="#" data-value="pacific-heights">Pacific Heights</a>
+                    <a id = "IR" class="dropdown-item" href="#" data-value="innerRichmond">Inner Richmond</a>
+                    <a id = "OR" class="dropdown-item" href="#" data-value="outerRichmond">Outer Richmond</a>
+                    <a id = "IS" class="dropdown-item" href="#" data-value="innerSunset">Inner Sunset</a>
+                    <a id = "OS" class="dropdown-item" href="#" data-value="outerSunset">Outer Sunset</a>
+                    <a id = "FH" class="dropdown-item" href="#" data-value="forestHill">Forest Hill</a>
+                    <a id = "C" class="dropdown-item" href="#" data-value="theCastro">Castro</a>
+                    <a id = "pacificH" class="dropdown-item" href="#" data-value="pacificHeights">Pacific Heights</a>
                     <a id = "P" class="dropdown-item" href="#" data-value="panhandle">Panhandle</a>
                     <a id = "E" class="dropdown-item" href="#" data-value="excelsior">Excelsior</a>
-                    <a id = "missionD" class="dropdown-item" href="#" data-value="mission-district">Mission District</a>
-                    <a id = "potreroH" class="dropdown-item" href="#" data-value="potrero-hill">Potrero Hill</a>
-                    <a id = "marinaD" class="dropdown-item" href="#" data-value="marina-district">Marina District</a>
-                    <a id = "F" class="dropdown-item" href="#" data-value="fillmore">Fillmore</a>
-                    <a id = "SOMA" class="dropdown-item" href="#" data-value="soma">SOMA</a>
-                    <a id = "FiDi" class="dropdown-item" href="#" data-value="financial-district">Financial District</a>
-                    <a id = "NB" class="dropdown-item" href="#" data-value="north-beach">North Beach</a>
+                    <a id = "missionD" class="dropdown-item" href="#" data-value="missionDistrict">Mission District</a>
+                    <a id = "potreroH" class="dropdown-item" href="#" data-value="potreroHill">Potrero Hill</a>
+                    <a id = "marinaD" class="dropdown-item" href="#" data-value="marinaDistrict">Marina District</a>
+                    <a id = "F" class="dropdown-item" href="#" data-value="fillmoreDistrict">Fillmore</a>
+                    <a id = "SOMA" class="dropdown-item" href="#" data-value="soMa">SOMA</a>
+                    <a id = "FiDi" class="dropdown-item" href="#" data-value="financialDistrict">Financial District</a>
+                    <a id = "NB" class="dropdown-item" href="#" data-value="northBeach">North Beach</a>
                 </div>
             </div>
 
@@ -151,7 +151,7 @@
     </div>
 </section>
 
-<!-- Array of Restaurant Section here -->
+<!-- Array of Restaurant Section here COFFEE -->
 <section id = "array-coffee">
 
     <div class = "row">
@@ -164,7 +164,7 @@
         
                 </div>
                 <div class = "col-md-2" id = "options-column">
-                    <p>Options for: </p>
+                    <p>Options:</p>
         
                 </div>
                 <div class = "col-md-6" id = "sip-logo-column">
@@ -183,24 +183,18 @@
         
                 </div>
                 <div class = "col-md-3">
-                    <div class="card" width="100px">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
+                    <div width="100px">
+                        <img class="card-img-top img-1" alt="Card image cap">
                     </div>
                 </div>
         
                 <div class = "col-md-3">
                     <div class="card" width="100px">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
+                        <img class="card-img-top map-1" alt="Card image cap">
                     </div>
                 </div>
         
-                <div class = "col-md-4" id = "description-1">
+                <div class = "col-md-4 description-1">
                     <p>Phone Number: </p>
                     <p>Business Hours: </p>
                     <p>Location: </p>
@@ -217,24 +211,18 @@
             
                 </div>
                 <div class = "col-md-3">
-                    <div class="card" width="100px">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
+                    <div width="100px">
+                        <img class="card-img-top img-2" alt="Card image cap">
                     </div>
                 </div>
         
                 <div class = "col-md-3">
                     <div class="card" width="100px">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
+                        <img class="card-img-top map-2" alt="Card image cap">
                     </div>
                 </div>
         
-                <div class = "col-md-4" id = "description-2">
+                <div class = "col-md-4 description-2">
                     <p>Phone Number</p>
                     <p>Business Hours</p>
                     <p>Location</p>
@@ -276,8 +264,7 @@
         
                 </div>
                 <div class = "col-md-2" id = "options-column">
-                    <p>Options for: </p>
-        
+                    <p>Options: </p>
                 </div>
                 <div class = "col-md-6" id = "sip-logo-column">
                     <img id = "sip-logo2" src = "assets/images/SipFirstLogo-removebg.png" width = "150px">
@@ -295,24 +282,18 @@
         
                 </div>
                 <div class = "col-md-3">
-                    <div class="card" width="100px">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
+                    <div width="100px">
+                        <img class="card-img-top img-1" alt="Card image cap">
                     </div>
                 </div>
         
                 <div class = "col-md-3">
                     <div class="card" width="100px">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
+                        <img class="card-img-top map-1" alt="Card image cap">
                     </div>
                 </div>
         
-                <div class = "col-md-4" id = "description-1">
+                <div class = "col-md-4 description-1">
                     <p>Phone Number: </p>
                     <p>Business Hours: </p>
                     <p>Location: </p>
@@ -329,24 +310,18 @@
             
                 </div>
                 <div class = "col-md-3">
-                    <div class="card" width="100px">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
+                    <div width="100px">
+                        <img class="card-img-top img-2" alt="Card image cap">
                     </div>
                 </div>
         
                 <div class = "col-md-3">
                     <div class="card" width="100px">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
+                        <img class="card-img-top map-2" alt="Card image cap">
                     </div>
                 </div>
         
-                <div class = "col-md-4" id = "description-2">
+                <div class = "col-md-4 description-2">
                     <p>Phone Number</p>
                     <p>Business Hours</p>
                     <p>Location</p>
