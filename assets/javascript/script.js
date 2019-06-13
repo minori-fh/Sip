@@ -223,7 +223,7 @@ function printData(){
                 // Option 1
                 businessInfo1.prepend(anchorLogo1)
                 businessInfo1.prepend("<b> Review Count: </b>" + response.businesses[i].review_count + "<br>")
-                businessInfo1.prepend("<b> Price: </b>" + response.businesses[i].price + "<br><br>")
+                businessInfo1.prepend("<b> Price: </b>" + response.businesses[i].price + "<br>")
                 businessInfo1.prepend("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
                 
                 address1Object = ("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
@@ -236,7 +236,7 @@ function printData(){
                 // Option 2
                 businessInfo2.prepend(anchorLogo2)
                 businessInfo2.prepend("<b> Review Count: </b>" + response.businesses[i+1].review_count + "<br>")
-                businessInfo2.prepend("<b> Price: </b>" + response.businesses[i+1].price + "<br><br>")
+                businessInfo2.prepend("<b> Price: </b>" + response.businesses[i+1].price + "<br>")
                 businessInfo2.prepend("<b> Location: </b>" + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>")
                 
                 address2Object = ("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>")
@@ -373,6 +373,7 @@ $("#alc-picture").on("click",function(e) {
         cafe = 1
     }
 });
+
 
 }) //END: document ready function 
 
