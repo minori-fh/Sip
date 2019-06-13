@@ -83,10 +83,10 @@ var address2 = address2Object;
             });
 
         } else {
-            alert("No results found");
+            console.log("No results found");
         }
         } else {
-        alert("Geocode was not successful for the following reason: " + status);
+        console.log("Geocode was not successful for the following reason: " + status);
         }
     });
     }
@@ -150,15 +150,15 @@ function printData(){
         var longitude = neighborhood.split(",")[1]
 
     if (bar === 1){
-        var category = "bar"
+        var category = "bar";
     } else if (cafe === 1){
-        var category = "cafe"
+        var category = "cafe";
     }
 
-    console.log(category)
-    console.log(price)
-    console.log(latitude)
-    console.log(longitude)
+    console.log(category);
+    console.log(price);
+    console.log(latitude);
+    console.log(longitude);
 
 
     // ***QUERY URL W/ OPEN NOW***
