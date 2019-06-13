@@ -25,7 +25,6 @@ var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for 
 var tynA = 0;
 var tynC = 0;
     
-    
 //Function declaration
 function printData(){
     var price = userSelectPrice
@@ -122,14 +121,14 @@ function printData(){
 
 // Event handlers
 $(".category").on("click",function(){
-    category = $(this).attr("data-value")
+    userSelectCategory = $(this).attr("data-value")
 
-    if (category === "bar"){
+    if (userSelectCategory === "bar"){
         bar = 1; 
         cafe = 0; 
-    } else if (category === "cafe"){
+    } else if (userSelectCategory === "cafe"){
         bar = 0;
-        cafe = 1
+        cafe = 1;
     }
 });
 
@@ -151,6 +150,7 @@ $(".dropdown-item").on("click", function(){
         printData();
         i = 0
     }
+
 });
 
 $("#next-button-1").on("click", function(){
@@ -181,6 +181,20 @@ $("#next-button-2").on("click", function(){
     } else if (tynA === 3){
         $("#array-coffee").hide()
         $("#google-maps").show()
+    }
+});
+
+//Event handler: when user clicks on image
+$("#alc-picture").on("click",function(e) {
+    var pWidth = $(this).innerWidth(); //use .outerWidth() if you want borders
+    var pOffset = $(this).offset(); 
+    var x = e.pageX - pOffset.left;
+    if(pWidth/2 > x){
+        bar = 1
+        cafe = 0
+    } else{
+        bar = 0
+        cafe = 1
     }
 });
 }) //END: document ready function 

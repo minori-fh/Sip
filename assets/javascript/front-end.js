@@ -35,8 +35,8 @@ $("#alc-picture").on("click",function(e) {
         $("#alc-picture").addClass("rotate-center-right")
         setTimeout(function(){ $("#alc-picture").removeClass("rotate-center-right");},1000)
 
-        coffee = 1;
-        alcohol = 0; 
+        alcohol = 1;
+        coffee = 0; 
         setTimeout(function(){$('#main-page').hide();}, 1000);
         setTimeout(function(){$('#second-user-input-page').show();}, 1000);
     }
