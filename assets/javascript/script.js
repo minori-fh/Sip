@@ -171,7 +171,7 @@ function printData(){
 
     jQuery.ajaxPrefilter(function (options) {
         if (options.crossDomain && jQuery.support.cors) {
-            options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+            options.url = `https://cors-anywhere.herokuapp.com/${options.url}`;
         }
     });
 
@@ -185,14 +185,14 @@ function printData(){
       }).then(function (response) {
         console.log(response)
 
-            var businessInfo1 = $(".description-1")
-            var businessInfo2 = $(".description-2")
-            businessInfo1.empty()
-            businessInfo2.empty()
+            var businessInfo1 = $(".description-1");
+            var businessInfo2 = $(".description-2");
+            businessInfo1.empty();
+            businessInfo2.empty();
 
-            console.log(response.businesses[0].image_url)
-            console.log(response.businesses[1].image_url)
-            console.log(response.businesses.length)
+            console.log(response.businesses[0].image_url);
+            console.log(response.businesses[1].image_url);
+            console.log(response.businesses.length);
 
             // TODO: FORMATTING FOR DYNAMICALLY APPENDED INFORMATION.
                 console.log(i)
