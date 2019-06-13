@@ -92,6 +92,29 @@ var address2 = "Vin Debut, San Francisco, CA";
 
 
 $(document).ready(function () {
+    var firebaseConfig = {
+        apiKey: "AIzaSyAPjA-XMT67VmcctKBNVbpj8IW23j1WA3U",
+      authDomain: "sip-project-app.firebaseapp.com",
+      databaseURL: "https://sip-project-app.firebaseio.com",
+      projectId: "sip-project-app",
+      storageBucket: "sip-project-app.appspot.com",
+      messagingSenderId: "218106770453",
+      appId: "1:218106770453:web:4946e50cc1f06f14"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    
+      var database = firebase.database();
+      var moveCounter = 0;
+    
+      $(document).mousemove(function() {
+        moveCounter++;
+        console.log("Mouse movement: " + moveCounter);
+        database.ref().set({
+            moveCount: moveCounter
+        });
+    })
+
     $("#map-1b").css("position", "none !important")
 // Variables to be put into queryURL
 var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for location search query
