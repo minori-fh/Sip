@@ -83,7 +83,7 @@ function printData(){
                 img2.attr("src", response.businesses[i+1].image_url)
                 
                 var yelpLogo = $('<img>')
-                yelpLogo.attr("src", "assets/images/yelp-logo.png")
+                yelpLogo.attr("src", "assets/Images/yelp-logo.png")
                 yelpLogo.attr("width", "40px")
                 
                 var anchorLogo1 = $("<a>")
@@ -184,9 +184,8 @@ $("#next-button-2").on("click", function(){
     }
 });
 
-//Event handler: when user clicks on image
 $("#alc-picture").on("click",function(e) {
-    var pWidth = $(this).innerWidth(); //use .outerWidth() if you want borders
+    var pWidth = $(this).innerWidth(); 
     var pOffset = $(this).offset(); 
     var x = e.pageX - pOffset.left;
     if(pWidth/2 > x){
