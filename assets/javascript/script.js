@@ -99,16 +99,22 @@ function printData(){
                 anchorLogo2.append(yelpLogo)
                 
                 businessInfo1.prepend(anchorLogo1)
-                businessInfo1.prepend("Price: " + response.businesses[i].price + "<br><br><br><br><br>")
+                businessInfo1.prepend("Review Count: " + response.businesses[i].review_count + "<br>")
+                businessInfo1.prepend("Price: " + response.businesses[i].price + "<br><br>")
                 businessInfo1.prepend("Location: " + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
                 businessInfo1.prepend("Rating: " + response.businesses[i].rating + "<br>")
+                businessInfo1.prepend(response.businesses[i].name + "<br><br>")
                 $(".description-1").css("background-color", "white")
+                $(".description-1").css("height", "220px")
     
                 businessInfo2.prepend(anchorLogo2)
-                businessInfo2.prepend("Price: " + response.businesses[i+1].price + "<br><br><br><br><br>")
+                businessInfo2.prepend("Review Count: " + response.businesses[i+1].review_count + "<br>")
+                businessInfo2.prepend("Price: " + response.businesses[i+1].price + "<br><br>")
                 businessInfo2.prepend("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
                 businessInfo2.prepend("Rating: " + response.businesses[i+1].rating + "<br>")
+                businessInfo2.prepend(response.businesses[i+1].name + "<br><br>")
                 $(".description-2").css("background-color", "white")
+                $(".description-2").css("height", "220px")
 
       }); //END ajax call
 
