@@ -23,7 +23,8 @@ $(document).ready(function () {
         soMa: "37.7808323,-122.4111729",
         financialDistrict: "37.7927815,-122.4054696",
         northBeach: "37.8047205,-122.4125737",
-        marinaDistrict: "37.8038433,-122.4418518"
+        marinaDistrict: "37.8038433,-122.4418518",
+        default: "37.8087,-122.4098" 
     };
     
     
