@@ -135,10 +135,12 @@ function printData(){
     console.log(latitude)
     console.log(longitude)
 
+
     // ***QUERY URL W/ OPEN NOW***
     // var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&open_now=true&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
     
     // ***QUERY URL W/O OPEN NOW***
+
     var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
     console.log(queryUrl)
 
@@ -294,6 +296,18 @@ $("#alc-picture").on("click",function(e) {
         cafe = 1
     }
 });
+
+
+$("#go-home").on("click",function(e) {
+    $("#main-page").show();
+    $("#google-maps").hide();
+    tynA = 0;
+    tynC = 0; 
+    bar = 0; 
+    cafe = 0; 
+});
+}) //END: document ready function 
+
 
 $("#map").css("position","fixed !important");
 }) //END: document ready function 
