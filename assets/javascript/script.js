@@ -486,7 +486,5 @@ $("#alc-picture").on("click",function(e) {
     }
 });
 
-
->>
 }) //END: document ready function 
 
