@@ -1,6 +1,98 @@
+// START Render Google Maps
+var geocoder;
+
+function initMap() {
+var map;
+var address1 = "933 Cabrillo St, San Francisco, CA";
+var address2 = "Vin Debut, San Francisco, CA";
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(-34.397, 150.644); //is overriden by var address
+    var myOptions = {
+    zoom: 16,
+    center: latlng,
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    },
+    navigationControl: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map1 = new google.maps.Map(document.getElementById("map-1b"), myOptions);
+    map2 = new google.maps.Map(document.getElementById("map-2b"), myOptions);
+    map3 = new google.maps.Map(document.getElementById("map-1a"), myOptions);
+    map4 = new google.maps.Map(document.getElementById("map-2a"), myOptions);
+    map5 = new google.maps.Map(document.getElementById("gm-large"), myOptions);
+
+
+    if (geocoder) {
+    geocoder.geocode({
+        'address': address1
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            map1.setCenter(results[0].geometry.location);
+
+            var infowindow1 = new google.maps.InfoWindow({
+            content: '<b>' + address1 + '</b>',
+            size: new google.maps.Size(150, 50)
+            });
+
+            var marker1 = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map1,
+            title: address1
+            });
+
+
+            google.maps.event.addListener(marker1, 'click', function() {
+            infowindow1.open(map, marker1);
+            });
+
+        } else {
+            alert("No results found");
+        }
+        } else {
+        alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+    }
+    if (geocoder) {
+    geocoder.geocode({
+        'address': address2
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            map2.setCenter(results[0].geometry.location);
+
+
+            var infowindow2 = new google.maps.InfoWindow({
+            content: '<b>' + address2 + '</b>',
+            size: new google.maps.Size(150, 50)
+            });
+
+            var marker2 = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map2,
+            title: address2
+            });
+
+            google.maps.event.addListener(marker2, 'click', function() {
+            infowindow2.open(map, marker2);
+            });
+
+        } else {
+            alert("No results found");
+        }
+        } else {
+        alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+    }
+}
+
 
 $(document).ready(function () {
-
+    $("#map-1b").css("position", "none !important")
 // Variables to be put into queryURL
 var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for location search query
     innerRichmond: "37.7799,-122.4647",
@@ -42,6 +134,12 @@ function printData(){
     console.log(price)
     console.log(latitude)
     console.log(longitude)
+
+
+    // ***QUERY URL W/ OPEN NOW***
+    // var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&open_now=true&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
+    
+    // ***QUERY URL W/O OPEN NOW***
 
     var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
     console.log(queryUrl)
@@ -114,6 +212,8 @@ function printData(){
                 businessInfo2.prepend(response.businesses[i+1].name + "<br><br>")
                 $(".description-2").css("background-color", "white")
                 $(".description-2").css("height", "220px")
+
+
 
       }); //END ajax call
 
@@ -197,6 +297,7 @@ $("#alc-picture").on("click",function(e) {
     }
 });
 
+
 $("#go-home").on("click",function(e) {
     $("#main-page").show();
     $("#google-maps").hide();
@@ -208,4 +309,5 @@ $("#go-home").on("click",function(e) {
 }) //END: document ready function 
 
 
-    
+$("#map").css("position","fixed !important");
+}) //END: document ready function 
