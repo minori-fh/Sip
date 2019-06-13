@@ -5,8 +5,8 @@ function initMap() {
 var map;
 // var address1 = "933 Cabrillo St, San Francisco, CA";
 // var address2 = "Vin Debut, San Francisco, CA";
-var address1 = address1Object
-var address2 = address2Object
+var address1 = address1Object;
+var address2 = address2Object;
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(-34.397, 150.644); //is overriden by var address
     var myOptions = {
