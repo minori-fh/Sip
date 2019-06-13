@@ -1,5 +1,6 @@
 // START Render Google Maps
 var geocoder;
+var address3Object = "San Francisco, CA"
 
 function initMap() {
 var map;
@@ -7,6 +8,7 @@ var map;
 // var address2 = "Vin Debut, San Francisco, CA";
 var address1 = address1Object
 var address2 = address2Object
+var address3 = address3Object
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(-34.397, 150.644); //is overriden by var address
     var myOptions = {
@@ -80,6 +82,105 @@ var address2 = address2Object
 
             google.maps.event.addListener(marker2, 'click', function() {
             infowindow2.open(map, marker2);
+            });
+
+        } else {
+            alert("No results found");
+        }
+        } else {
+        alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+    }
+    if (geocoder) {
+    geocoder.geocode({
+        'address': address1
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            map3.setCenter(results[0].geometry.location);
+
+            var infowindow1 = new google.maps.InfoWindow({
+            content: '<b>' + address1 + '</b>',
+            size: new google.maps.Size(150, 50)
+            });
+
+            var marker1 = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map3,
+            title: address1
+            });
+
+
+            google.maps.event.addListener(marker1, 'click', function() {
+            infowindow1.open(map, marker1);
+            });
+
+        } else {
+            alert("No results found");
+        }
+        } else {
+        alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+    }
+    if (geocoder) {
+    geocoder.geocode({
+        'address': address2
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            map4.setCenter(results[0].geometry.location);
+
+
+            var infowindow2 = new google.maps.InfoWindow({
+            content: '<b>' + address2 + '</b>',
+            size: new google.maps.Size(150, 50)
+            });
+
+            var marker2 = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map4,
+            title: address2
+            });
+
+            google.maps.event.addListener(marker2, 'click', function() {
+            infowindow2.open(map, marker2);
+            });
+
+        } else {
+            alert("No results found");
+        }
+        } else {
+        alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+    }
+
+    //Large map geocoder
+    if (geocoder) {
+    geocoder.geocode({
+        'address': address3
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            map5.setCenter(results[0].geometry.location);
+
+
+            var infowindow3 = new google.maps.InfoWindow({
+            content: '<b>' + address3 + '</b>',
+            size: new google.maps.Size(150, 50)
+            });
+
+            var marker3 = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map5,
+            title: address3
+            });
+            // Create array for markers to be generated in nearby search.
+
+            google.maps.event.addListener(marker3, 'click', function() {
+            infowindow3.open(map, marker3);
             });
 
         } else {
@@ -361,6 +462,17 @@ $("#go-home").on("click",function(e) {
     cafe = 0; 
 });
 
+
+$("#search").on("click", function() {
+
+    var userAddressSearch = $("#address").val()
+    console.log(userAddressSearch)
+
+    address3Object = userAddressSearch
+
+    initMap();
+})
+
 $("#alc-picture").on("click",function(e) {
     var pWidth = $(this).innerWidth();
     var pOffset = $(this).offset(); 
@@ -375,5 +487,6 @@ $("#alc-picture").on("click",function(e) {
 });
 
 
+>>
 }) //END: document ready function 
 
