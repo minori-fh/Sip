@@ -195,56 +195,56 @@ function printData(){
             console.log(response.businesses.length);
 
             // TODO: FORMATTING FOR DYNAMICALLY APPENDED INFORMATION.
-                console.log(i)
+                console.log(i);
 
-                var img1 = $(".img-1")
-                img1.addClass("thumbnail") // TODO: Add CSS for formatting images
-                img1.attr("src", response.businesses[i].image_url)
+                var img1 = $(".img-1");
+                img1.addClass("thumbnail"); // TODO: Add CSS for formatting images
+                img1.attr("src", response.businesses[i].image_url);
                 
-                var img2 = $(".img-2")
-                img2.addClass("thumbnail") // TODO: Add CSS for formatting images
-                img2.attr("src", response.businesses[i+1].image_url)
+                var img2 = $(".img-2");
+                img2.addClass("thumbnail"); // TODO: Add CSS for formatting images
+                img2.attr("src", response.businesses[i+1].image_url);
                 
-                var yelpLogo = $('<img>')
-                yelpLogo.attr("src", "assets/Images/yelp-logo.png")
-                yelpLogo.attr("width", "40px")
+                var yelpLogo = $('<img>');
+                yelpLogo.attr("src", "assets/Images/yelp-logo.png");
+                yelpLogo.attr("width", "40px");
                 
-                var anchorLogo1 = $("<a>")
-                anchorLogo1.attr("href", response.businesses[i].url)
-                anchorLogo1.attr("target", "_blank")
-                anchorLogo1.append(yelpLogo)
-                yelpLogo.wrap(anchorLogo1)
+                var anchorLogo1 = $("<a>");
+                anchorLogo1.attr("href", response.businesses[i].url);
+                anchorLogo1.attr("target", "_blank");
+                anchorLogo1.append(yelpLogo);
+                yelpLogo.wrap(anchorLogo1);
                 
-                var anchorLogo2 = $("<a>")
-                anchorLogo2.attr("href", response.businesses[i+1].url)
-                anchorLogo2.attr("target", "_blank")
-                anchorLogo2.append(yelpLogo)
+                var anchorLogo2 = $("<a>");
+                anchorLogo2.attr("href", response.businesses[i+1].url);
+                anchorLogo2.attr("target", "_blank");
+                anchorLogo2.append(yelpLogo);
                 
                 // Option 1
-                businessInfo1.prepend(anchorLogo1)
-                businessInfo1.prepend("<b> Review Count: </b>" + response.businesses[i].review_count + "<br>")
-                businessInfo1.prepend("<b> Price: </b>" + response.businesses[i].price + "<br><br>")
-                businessInfo1.prepend("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
+                businessInfo1.prepend(anchorLogo1);
+                businessInfo1.prepend("<b> Review Count: </b>" + response.businesses[i].review_count + "<br>");
+                businessInfo1.prepend("<b> Price: </b>" + response.businesses[i].price + "<br><br>");
+                businessInfo1.prepend("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>");
                 
-                address1Object = ("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
+                address1Object = ("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>");
                 
-                businessInfo1.prepend("<b> Rating: </b>" + response.businesses[i].rating + "<br>")
-                businessInfo1.prepend("<span style = 'font-size: 30px'><b>" + response.businesses[i].name + "</b></span><br><br>")
-                $(".description-1").css("background-color", "white")
-                $(".description-1").css("height", "220px")
+                businessInfo1.prepend("<b> Rating: </b>" + response.businesses[i].rating + "<br>");
+                businessInfo1.prepend("<span style = 'font-size: 30px'><b>" + response.businesses[i].name + "</b></span><br><br>");
+                $(".description-1").css("background-color", "white");
+                $(".description-1").css("height", "220px");
     
                 // Option 2
-                businessInfo2.prepend(anchorLogo2)
-                businessInfo2.prepend("<b> Review Count: </b>" + response.businesses[i+1].review_count + "<br>")
-                businessInfo2.prepend("<b> Price: </b>" + response.businesses[i+1].price + "<br><br>")
-                businessInfo2.prepend("<b> Location: </b>" + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>")
+                businessInfo2.prepend(anchorLogo2);
+                businessInfo2.prepend("<b> Review Count: </b>" + response.businesses[i+1].review_count + "<br>");
+                businessInfo2.prepend("<b> Price: </b>" + response.businesses[i+1].price + "<br><br>");
+                businessInfo2.prepend("<b> Location: </b>" + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>");
                 
-                address2Object = ("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>")
+                address2Object = ("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>");
                 
-                businessInfo2.prepend("<b> Rating: <b>" + response.businesses[i+1].rating + "<br>")
-                businessInfo2.prepend("<span style = 'font-size: 30px'><b>" + response.businesses[i+1].name + "</b></span><br><br>")
-                $(".description-2").css("background-color", "white")
-                $(".description-2").css("height", "220px")
+                businessInfo2.prepend("<b> Rating: <b>" + response.businesses[i+1].rating + "<br>");
+                businessInfo2.prepend("<span style = 'font-size: 30px'><b>" + response.businesses[i+1].name + "</b></span><br><br>");
+                $(".description-2").css("background-color", "white");
+                $(".description-2").css("height", "220px");
 
                 initMap();
 
