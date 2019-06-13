@@ -6,13 +6,13 @@
 }
 
 #array-coffee {
-	background-image: url("../images/coffeebg.jpg");
+	background-image: url("../Images/coffeebg.jpg");
 	background-size: cover; 
 	overflow-x: scroll; 
 }
 
 #array-drink {
-	background-image: url("../images/drinkbg.jpg");
+	background-image: url("../Images/drinkbg.jpg");
 	background-size: cover; 
 	overflow-x: scroll; 
 }
