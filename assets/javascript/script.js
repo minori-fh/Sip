@@ -1,12 +1,18 @@
 // START Render Google Maps
 var geocoder;
+var address3Object = "San Francisco, CA"
 
 function initMap() {
 var map;
 // var address1 = "933 Cabrillo St, San Francisco, CA";
 // var address2 = "Vin Debut, San Francisco, CA";
-var address1 = address1Object;
-var address2 = address2Object;
+
+
+
+var address1 = address1Object
+var address2 = address2Object
+var address3 = address3Object
+
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(-34.397, 150.644); //is overriden by var address
     var myOptions = {
@@ -87,6 +93,105 @@ var address2 = address2Object;
         }
         } else {
         console.log("Geocode was not successful for the following reason: " + status);
+        }
+    });
+    }
+    if (geocoder) {
+    geocoder.geocode({
+        'address': address1
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            map3.setCenter(results[0].geometry.location);
+
+            var infowindow1 = new google.maps.InfoWindow({
+            content: '<b>' + address1 + '</b>',
+            size: new google.maps.Size(150, 50)
+            });
+
+            var marker1 = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map3,
+            title: address1
+            });
+
+
+            google.maps.event.addListener(marker1, 'click', function() {
+            infowindow1.open(map, marker1);
+            });
+
+        } else {
+            alert("No results found");
+        }
+        } else {
+        alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+    }
+    if (geocoder) {
+    geocoder.geocode({
+        'address': address2
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            map4.setCenter(results[0].geometry.location);
+
+
+            var infowindow2 = new google.maps.InfoWindow({
+            content: '<b>' + address2 + '</b>',
+            size: new google.maps.Size(150, 50)
+            });
+
+            var marker2 = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map4,
+            title: address2
+            });
+
+            google.maps.event.addListener(marker2, 'click', function() {
+            infowindow2.open(map, marker2);
+            });
+
+        } else {
+            alert("No results found");
+        }
+        } else {
+        alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+    }
+
+    //Large map geocoder
+    if (geocoder) {
+    geocoder.geocode({
+        'address': address3
+    }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            map5.setCenter(results[0].geometry.location);
+
+
+            var infowindow3 = new google.maps.InfoWindow({
+            content: '<b>' + address3 + '</b>',
+            size: new google.maps.Size(150, 50)
+            });
+
+            var marker3 = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map5,
+            title: address3
+            });
+            // Create array for markers to be generated in nearby search.
+
+            google.maps.event.addListener(marker3, 'click', function() {
+            infowindow3.open(map, marker3);
+            });
+
+        } else {
+            alert("No results found");
+        }
+        } else {
+        alert("Geocode was not successful for the following reason: " + status);
         }
     });
     }
@@ -221,30 +326,37 @@ function printData(){
                 anchorLogo2.append(yelpLogo);
                 
                 // Option 1
-                businessInfo1.prepend(anchorLogo1);
-                businessInfo1.prepend("<b> Review Count: </b>" + response.businesses[i].review_count + "<br>");
-                businessInfo1.prepend("<b> Price: </b>" + response.businesses[i].price + "<br><br>");
-                businessInfo1.prepend("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>");
+
+           
+                businessInfo1.prepend(anchorLogo1)
+                businessInfo1.prepend("<b> Review Count: </b>" + response.businesses[i].review_count + "<br>")
+                businessInfo1.prepend("<b> Price: </b>" + response.businesses[i].price + "<br>")
+                businessInfo1.prepend("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
+
                 
                 address1Object = ("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>");
                 
-                businessInfo1.prepend("<b> Rating: </b>" + response.businesses[i].rating + "<br>");
-                businessInfo1.prepend("<span style = 'font-size: 30px'><b>" + response.businesses[i].name + "</b></span><br><br>");
-                $(".description-1").css("background-color", "white");
-                $(".description-1").css("height", "220px");
+
+                businessInfo1.prepend("<b> Rating: </b>" + response.businesses[i].rating + "<br>")
+                businessInfo1.prepend("<span style = 'font-size: 20px'><b>" + response.businesses[i].name + "</b></span><br><br>")
+                $(".description-1").css("background-color", "white")
+                $(".description-1").css("height", "220px")
     
                 // Option 2
-                businessInfo2.prepend(anchorLogo2);
-                businessInfo2.prepend("<b> Review Count: </b>" + response.businesses[i+1].review_count + "<br>");
-                businessInfo2.prepend("<b> Price: </b>" + response.businesses[i+1].price + "<br><br>");
-                businessInfo2.prepend("<b> Location: </b>" + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>");
+                businessInfo2.prepend(anchorLogo2)
+                businessInfo2.prepend("<b> Review Count: </b>" + response.businesses[i+1].review_count + "<br>")
+                businessInfo2.prepend("<b> Price: </b>" + response.businesses[i+1].price + "<br>")
+                businessInfo2.prepend("<b> Location: </b>" + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>")
+
                 
                 address2Object = ("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>");
                 
-                businessInfo2.prepend("<b> Rating: <b>" + response.businesses[i+1].rating + "<br>");
-                businessInfo2.prepend("<span style = 'font-size: 30px'><b>" + response.businesses[i+1].name + "</b></span><br><br>");
-                $(".description-2").css("background-color", "white");
-                $(".description-2").css("height", "220px");
+
+                businessInfo2.prepend("<b> Rating: </b>" + response.businesses[i+1].rating + "<br>")
+                businessInfo2.prepend("<span style = 'font-size: 20px'><b>" + response.businesses[i+1].name + "</b></span><br><br>")
+                $(".description-2").css("background-color", "white")
+                $(".description-2").css("height", "220px")
+
 
                 initMap();
 
@@ -275,6 +387,16 @@ $(".dropdown-price").on("click", function(){
         printData();
         i = 0;
     }
+
+
+    if (bar === 1){
+        $("#second-user-input-page").hide()
+        $("#array-drink").show()
+    } else if (cafe === 1){
+        $("#second-user-input-page").hide()
+        $("#array-coffee").show()
+    }
+
 });
 
 $(".dropdown-item").on("click", function(){
@@ -284,6 +406,15 @@ $(".dropdown-item").on("click", function(){
         userSelectPrice = "3"
         printData();
         i = 0;
+    }
+
+
+    if (bar === 1){
+        $("#second-user-input-page").hide()
+        $("#array-drink").show()
+    } else if (cafe === 1){
+        $("#second-user-input-page").hide()
+        $("#array-coffee").show()
     }
 
 });
@@ -341,5 +472,32 @@ $("#go-home").on("click",function(e) {
     bar = 0; 
     cafe = 0; 
 });
+
+
+$("#search").on("click", function() {
+
+    var userAddressSearch = $("#address").val()
+    console.log(userAddressSearch)
+
+    address3Object = userAddressSearch
+
+    initMap();
+})
+
+$("#alc-picture").on("click",function(e) {
+    var pWidth = $(this).innerWidth();
+    var pOffset = $(this).offset(); 
+    var x = e.pageX - pOffset.left;
+    if(pWidth/2 > x){
+        bar = 1
+        cafe = 0
+    } else{
+        bar = 0
+        cafe = 1
+    }
+});
+
+
+>>
 }) //END: document ready function 
 
