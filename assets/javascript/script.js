@@ -196,6 +196,15 @@ $("#alc-picture").on("click",function(e) {
         cafe = 1
     }
 });
+
+$("#go-home").on("click",function(e) {
+    $("#main-page").show();
+    $("#google-maps").hide();
+    tynA = 0;
+    tynC = 0; 
+    bar = 0; 
+    cafe = 0; 
+});
 }) //END: document ready function 
 
 
