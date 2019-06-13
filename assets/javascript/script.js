@@ -271,9 +271,9 @@ $(".dropdown-price").on("click", function(){
     userSelectPrice = $(this).attr("data-value")
 
     if (userSelectPrice != ""){
-        key = "default"
+        key = "default";
         printData();
-        i = 0
+        i = 0;
     }
 });
 
@@ -283,19 +283,19 @@ $(".dropdown-item").on("click", function(){
     if (key != ""){
         userSelectPrice = "3"
         printData();
-        i = 0
+        i = 0;
     }
 
 });
 
 $("#next-button-1").on("click", function(){
-    tynC++
+    tynC++;
 
     if (tynC === 1){
-        i = 2
+        i = 2;
         printData()
     } else if (tynC === 2){
-        i = 4
+        i = 4;
         printData()
     } else if (tynC === 3){
         $("#array-coffee").hide()
@@ -308,14 +308,14 @@ $("#next-button-2").on("click", function(){
     tynA++
 
     if (tynA ===  1){
-        i = 2
+        i = 2;
         printData()
     } else if (tynA === 2){
-        i = 4
+        i = 4;
         printData()
     } else if (tynA === 3){
-        $("#array-coffee").hide()
-        $("#google-maps").show()
+        $("#array-coffee").hide();
+        $("#google-maps").show();
     }
 });
 
