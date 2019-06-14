@@ -652,7 +652,6 @@ $("#go-home").on("click",function(e) {
 
 
 $("#search").on("click", function() {
-
     var userAddressSearch = $("#address").val()
     console.log(userAddressSearch)
 
