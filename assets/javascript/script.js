@@ -234,8 +234,6 @@ var address3 = address3Object
             
         ];
 
-        
-
     
         //    var populateMarkerArray = function(responseCoords, responseNames) {
         //        for (var i = 0; i < coords.length; i++) {
@@ -349,7 +347,13 @@ var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for 
 var tynA = 0;
 var tynC = 0;
     
-//Function declaration
+//Function declaration(s)
+
+function reset(){
+    tynA = 0;
+    tynC = 0;
+}
+
 function printData(){
     var price = userSelectPrice
     var neighborhood = sanFrancisco[key]
@@ -594,7 +598,9 @@ $("#next-button-1").on("click", function(){
         printData()
     } else if (tynC === 3){
         $("#array-coffee").hide()
+        $("#array-drink").hide()
         $("#google-maps").show()
+        reset()
     }
 
 });
@@ -610,7 +616,9 @@ $("#next-button-2").on("click", function(){
         printData()
     } else if (tynA === 3){
         $("#array-coffee").hide()
+        $("#array-drink").hide()
         $("#google-maps").show()
+        reset();
     }
 });
 
@@ -649,7 +657,6 @@ $("#search").on("click", function() {
     console.log(userAddressSearch)
 
     address3Object = userAddressSearch
-    populateMarkerArray();
     initMap();
 })
 
