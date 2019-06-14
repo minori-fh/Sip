@@ -346,6 +346,7 @@ var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for 
 
 var tynA = 0;
 var tynC = 0;
+var userSelectCategory = ""
     
 //Function declaration(s)
 
@@ -547,8 +548,10 @@ $(".category").on("click",function(){
     }
 });
 
+
 $(".dropdown-price").on("click", function(){
     userSelectPrice = $(this).attr("data-value")
+    console.log(userSelectCategory)
 
     if (userSelectPrice != ""){
         key = "default"
@@ -556,19 +559,27 @@ $(".dropdown-price").on("click", function(){
         i = 0
     }
 
+    $("#second-user-input-page").hide()
+    $("#array-drink").show()
+    $("#array-coffee").hide()
 
-    if (bar === 1){
-        $("#second-user-input-page").hide()
-        $("#array-drink").show()
-    } else if (cafe === 1){
-        $("#second-user-input-page").hide()
-        $("#array-coffee").show()
-    }
+    // if (userSelectCategory === "bar"){
+    //     $("#second-user-input-page").hide()
+    //     $("#array-drink").show()
+    //     $("#array-coffee").hide()
+    //     console.log("wut")
+    // } else if (userSelectCategory === "cafe"){
+    //     $("#second-user-input-page").hide()
+    //     $("#array-coffee").show()
+    //     $("#array-drink").hide()
+    //     console.log("wutwut")
+    // }
 
 });
 
 $(".dropdown-item").on("click", function(){
     key = $(this).attr("data-value")
+    console.log(userSelectCategory)
 
     if (key != ""){
         userSelectPrice = "3"
@@ -576,14 +587,22 @@ $(".dropdown-item").on("click", function(){
         i = 0
     }
 
+    $("#second-user-input-page").hide()
+    $("#array-drink").show()
+    $("#array-coffee").hide()
 
-    if (bar === 1){
-        $("#second-user-input-page").hide()
-        $("#array-drink").show()
-    } else if (cafe === 1){
-        $("#second-user-input-page").hide()
-        $("#array-coffee").show()
-    }
+
+    // if (userSelectCategory === "bar"){
+    //     $("#second-user-input-page").hide()
+    //     $("#array-drink").show()
+    //     $("#array-coffee").hide()
+    //     console.log("nani")
+    // } else if (userSelectCategory === "cafe"){
+    //     $("#second-user-input-page").hide()
+    //     $("#array-coffee").show()
+    //     $("#array-drink").hide()
+    //     console.log("naninani")
+    // }
 
 });
 
