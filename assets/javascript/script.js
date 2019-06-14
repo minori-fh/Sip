@@ -523,14 +523,6 @@ function printData(){
                 $(".description-2").css("background-color", "white")
                 $(".description-2").css("height", "220px")
 
-                //Other options for large map
-                businessInfo1.prepend("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
-
-
-
-                
-                
-                
                 initMap();
                 
                 
