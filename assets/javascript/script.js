@@ -21,11 +21,24 @@ var address3 = address3Object
     navigationControl: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+    
+    var myOptions2 = {
+    zoom: 14,
+    center: latlng,
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    },
+    navigationControl: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+
     map1 = new google.maps.Map(document.getElementById("map-1b"), myOptions);
     map2 = new google.maps.Map(document.getElementById("map-2b"), myOptions);
     map3 = new google.maps.Map(document.getElementById("map-1a"), myOptions);
     map4 = new google.maps.Map(document.getElementById("map-2a"), myOptions);
-    map5 = new google.maps.Map(document.getElementById("gm-large"), myOptions);
+    map5 = new google.maps.Map(document.getElementById("gm-large"), myOptions2);
 
 
     if (geocoder) {
@@ -172,12 +185,105 @@ var address3 = address3Object
             size: new google.maps.Size(150, 50)
             });
 
-            var marker3 = new google.maps.Marker({
-            position: results[0].geometry.location,
-            map: map5,
-            title: address3
-            });
+        var getMarkerArray = [
+            { 
+            coords:{lat:storeLat0, lng:storeLng0},
+            content: businessName0
+            },
+            { 
+            coords:{lat:storeLat1, lng:storeLng1},
+            content: businessName1
+            },
+            { 
+            coords:{lat:storeLat2, lng:storeLng2},
+            content: businessName2
+            },
+            { 
+            coords:{lat:storeLat3, lng:storeLng3},
+            content: businessName3
+            },
+            { 
+            coords:{lat:storeLat4, lng:storeLng4},
+            content: businessName4
+            },
+            { 
+            coords:{lat:storeLat5, lng:storeLng5},
+            content: businessName5
+            },
+            // { 
+            // coords:{lat:storeLat6, lng:storeLng6},
+            // content: businessName6
+            // },
+            // { 
+            // coords:{lat:storeLat7, lng:storeLng7},
+            // content: businessName7
+            // },
+            // { 
+            // coords:{lat:storeLat8, lng:storeLng8},
+            // content: businessName8
+            // },
+            // { 
+            // coords:{lat:storeLat9, lng:storeLng9},
+            // content: businessName9
+            // },
+            // { 
+            // coords:{lat:storeLat10, lng:storeLng10},
+            // content: businessName10
+            // },
+           
+            
+        ];
+
+        
+
+    
+        //    var populateMarkerArray = function(responseCoords, responseNames) {
+        //        for (var i = 0; i < coords.length; i++) {
+        //            getMarkerArray.push({
+        //                coords: responseCoords[i],
+        //                content: responseNames[i]
+        //            })
+        //        }
+        //        console.log(getMarkerArray)
+        //    }
+
             // Create array for markers to be generated in nearby search.
+
+            for (var i = 0; i < getMarkerArray.length; i++) {
+                addMarker(getMarkerArray[i])
+            }
+    
+    
+            // Add Marker Function
+            function addMarker(props){
+                var marker3= new google.maps.Marker({
+                    position: props.coords, // position of the marker
+                    map: map5 // links which map this marker is placed on (#map)
+                    // icon: props.iconImage // link to marker img
+                });
+    
+                //Check for customIcon, otherwise sets to default
+                if(props.iconImage){
+                    // Set icon image
+                    marker3.setIcon(props.iconImage);
+                }
+    
+                //Checks content for infoWindow
+                if(props.content){
+                    var infoWindow5 = new google.maps.InfoWindow({
+                    content:props.content
+                    });
+                }
+    
+                var infoWindow5 = new google.maps.InfoWindow({
+                content:props.content
+                });
+            
+                marker3.addListener("click", function () {
+                    infoWindow5.open(map, marker3);
+                })
+            }
+
 
             google.maps.event.addListener(marker3, 'click', function() {
             infowindow3.open(map, marker3);
@@ -212,7 +318,7 @@ $(document).ready(function () {
     
       $(document).mousemove(function() {
         moveCounter++;
-        console.log("Mouse movement: " + moveCounter);
+        // console.log("Mouse movement: " + moveCounter);
         database.ref().set({
             moveCount: moveCounter
         });
@@ -281,12 +387,82 @@ function printData(){
         method: "GET",
               
         headers: {
-          authorization: "Bearer KQWhz9_RIh91MBjFk0ieWlqw9hOdrfJPFDZsGeAQcd3xPc9KV57sSDZBxftr2vfBqFjgcq2nBuas8lZ8wVDWHbtYQQFLpneMHocF27Tk_43hgOjMY-fT2hnGt1P9XHYx"
+            authorization: "Bearer KQWhz9_RIh91MBjFk0ieWlqw9hOdrfJPFDZsGeAQcd3xPc9KV57sSDZBxftr2vfBqFjgcq2nBuas8lZ8wVDWHbtYQQFLpneMHocF27Tk_43hgOjMY-fT2hnGt1P9XHYx"
         }
-      }).then(function (response) {
+    }).then(function (response) {
         console.log(response)
+     
+        //HARD CODED RESPONSE VARIABLES
+        if (response.businesses[0]) {
+            storeLat0 =  response.businesses[0].coordinates.latitude
+            storeLng0 = response.businesses[0].coordinates.longitude
+            businessName0 = response.businesses[0].name
+        }
 
-            var businessInfo1 = $(".description-1")
+        console.log(storeLat0)
+        if (response.businesses[1]) {
+        storeLat1 =  response.businesses[1].coordinates.latitude
+        storeLng1 = response.businesses[1].coordinates.longitude
+        businessName1 = response.businesses[1].name
+        }
+        
+        if (response.businesses[2]) {
+        storeLat2 =  response.businesses[2].coordinates.latitude
+        storeLng2 = response.businesses[2].coordinates.longitude
+        businessName2 = response.businesses[2].name
+        }
+        
+        if (response.businesses[3]) {
+        storeLat3 =  response.businesses[3].coordinates.latitude
+        storeLng3 = response.businesses[3].coordinates.longitude
+        businessName3 = response.businesses[3].name
+        }
+
+        if (response.businesses[4]) {
+        storeLat4 =  response.businesses[4].coordinates.latitude
+        storeLng4 = response.businesses[4].coordinates.longitude
+        businessName4 = response.businesses[4].name
+        }
+
+        if (response.businesses[5]) {
+        storeLat5 =  response.businesses[5].coordinates.latitude
+        storeLng5 = response.businesses[5].coordinates.longitude
+        businessName5 = response.businesses[5].name
+        }
+        
+        // if (response.businesses[6]) {
+        // storeLat6 =  response.businesses[6].coordinates.latitude
+        // storeLng6 = response.businesses[6].coordinates.longitude
+        // businessName6 = response.businesses[6].name
+        // }
+        
+        // if (response.businesses[7]) {
+        // storeLat7 =  response.businesses[7].coordinates.latitude
+        // storeLng7 = response.businesses[7].coordinates.longitude
+        // businessName7 = response.businesses[7].name
+        // }
+        
+        // if (response.businesses[8]) {
+        // storeLat8 =  response.businesses[8].coordinates.latitude
+        // storeLng8 = response.businesses[8].coordinates.longitude
+        // businessName8 = response.businesses[8].name
+        // }
+        
+        // if (response.businesses[9]) {
+        // storeLat9 =  response.businesses[9].coordinates.latitude
+        // storeLng9 = response.businesses[9].coordinates.longitude
+        // businessName9 = response.businesses[9].name
+        // }
+        
+        // if (response.businesses[10]) {
+        // storeLat10 =  response.businesses[10].coordinates.latitude
+        // storeLng10 = response.businesses[10].coordinates.longitude
+        // businessName10 = response.businesses[10].name
+        // }
+
+
+
+        var businessInfo1 = $(".description-1")
             var businessInfo2 = $(".description-2")
             businessInfo1.empty()
             businessInfo2.empty()
@@ -347,12 +523,19 @@ function printData(){
                 $(".description-2").css("background-color", "white")
                 $(".description-2").css("height", "220px")
 
+                //Other options for large map
+                businessInfo1.prepend("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
+
+
+
+                
+                
+                
                 initMap();
-
-
-
-      }); //END ajax call
-
+                
+                
+            }); //END ajax call
+            
 } //END: function printData
 
 // Event handlers
@@ -449,7 +632,7 @@ $("#search").on("click", function() {
     console.log(userAddressSearch)
 
     address3Object = userAddressSearch
-
+    populateMarkerArray();
     initMap();
 })
 }) //END: document ready function 
