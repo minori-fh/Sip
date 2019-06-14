@@ -234,8 +234,6 @@ var address3 = address3Object
             
         ];
 
-        
-
     
         //    var populateMarkerArray = function(responseCoords, responseNames) {
         //        for (var i = 0; i < coords.length; i++) {
@@ -349,7 +347,13 @@ var sanFrancisco = { // Object with key-value pairs for neighboorhoods used for 
 var tynA = 0;
 var tynC = 0;
     
-//Function declaration
+//Function declaration(s)
+
+function reset(){
+    tynA = 0;
+    tynC = 0;
+}
+
 function printData(){
     var price = userSelectPrice
     var neighborhood = sanFrancisco[key]
@@ -523,14 +527,6 @@ function printData(){
                 $(".description-2").css("background-color", "white")
                 $(".description-2").css("height", "220px")
 
-                //Other options for large map
-                businessInfo1.prepend("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
-
-
-
-                
-                
-                
                 initMap();
                 
                 
@@ -602,7 +598,9 @@ $("#next-button-1").on("click", function(){
         printData()
     } else if (tynC === 3){
         $("#array-coffee").hide()
+        $("#array-drink").hide()
         $("#google-maps").show()
+        reset()
     }
 
 });
@@ -618,7 +616,9 @@ $("#next-button-2").on("click", function(){
         printData()
     } else if (tynA === 3){
         $("#array-coffee").hide()
+        $("#array-drink").hide()
         $("#google-maps").show()
+        reset();
     }
 });
 
@@ -639,6 +639,11 @@ $("#alc-picture").on("click",function(e) {
 $("#go-home").on("click",function(e) {
     $("#main-page").show();
     $("#google-maps").hide();
+    $("#loading-page").hide();
+    $("#array-coffee").hide()
+    $("#array-drink").hide()
+    $("#second-user-input-page").hide();
+
     tynA = 0;
     tynC = 0; 
     bar = 0; 
@@ -652,7 +657,6 @@ $("#search").on("click", function() {
     console.log(userAddressSearch)
 
     address3Object = userAddressSearch
-    populateMarkerArray();
     initMap();
 })
 
