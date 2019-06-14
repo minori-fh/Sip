@@ -639,6 +639,11 @@ $("#alc-picture").on("click",function(e) {
 $("#go-home").on("click",function(e) {
     $("#main-page").show();
     $("#google-maps").hide();
+    $("#loading-page").hide();
+    $("#array-coffee").hide()
+    $("#array-drink").hide()
+    $("#second-user-input-page").hide();
+
     tynA = 0;
     tynC = 0; 
     bar = 0; 
