@@ -13,8 +13,7 @@ Page for the user to see where their options are located
 ![Battlescene Screenshot](assets/Images/site-5.png)
 
 ## Description of Site
-A game based off the 'Polytopia' mobile game for the purpose of:  
-1. Practicing newly learned skills in jQuery
+"Sip First" is an app for an individual that lives in SF and is looking to grab a drink. The premise of this site was to address paralysis by analysis which occurs when users are overwhelmed with too many choices and often do not feel satisfaction even after making a choice due to wondering, 'what if'.
 
 ## Technologies Used
 1. HTML 
