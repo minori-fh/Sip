@@ -7,7 +7,7 @@ This site will simplify the decision making process for individuals by displayin
 
 ## Pictures of Site
 Initial loading page: 
-![Loading page Screenshot](assets/Images/site-1.gif)
+![Loading page Screenshot](assets/Images/site-1.png)
 Page for the user to make two choices:
 1.) Do they want to drink alcohol or coffee?
 2.) What's most important to them: price or location? 
