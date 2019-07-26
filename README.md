@@ -9,6 +9,8 @@ The basic logic flow of this web-based application begins with the user-input. T
 tl;dr... [ WEB-CLIENT(input) ==> YELP API ==> GOOGLE API ==> WEB-CLIENT(render) ]
 
 ## Pictures of Site
+[Click here to visit site](https://minori-fh.github.io/Sip/)
+
 Initial loading page: 
 ![Loading page Screenshot](assets/Images/site-1.png)
 
