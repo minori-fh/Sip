@@ -11,24 +11,35 @@ tl;dr... [ WEB-CLIENT(input) ==> YELP API ==> GOOGLE API ==> WEB-CLIENT(render) 
 ## Pictures of Site
 Initial loading page: 
 ![Loading page Screenshot](assets/Images/site-1.png)
+
 Page for the user to make two choices:
 1.) Do they want to drink alcohol or coffee?
 2.) What's most important to them: price or location? 
 ![Introduction scene Screenshot](assets/Images/site-2.gif)
+
 Page for the user to go through 3 sets of two options
 ![Battlescene Screenshot](assets/Images/site-4.png)
+
 Page for the user to see where their options are located
 ![Battlescene Screenshot](assets/Images/site-5.png)
 
+## Improvements for the Future
+1. Mobile responsiveness
+2. Incorporate user authentication to allow users to favorite bars/ cafes on their account to visit later
+3. Ability to update the comments that users have already left on a doge
+4. Refactor html code to separate files for easier maintenance 
+
+## Getting Started
+No external packages or installments are necessary to get a copy of the project up and running on your local machine for development or testing purposes. 
+
 ## Technologies Used
-1. HTML 
-2. CSS
-3. Bootstrap
-4. Javascript
-5. jQuery
-6. AJAX calls for Google Maps and Yelp API
-7. Codepen and animista libraries
-8. Firebase
+1. [HTML](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+2. [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+3. [Bootstrap](https://getbootstrap.com/)
+4. [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+5. [jQuery](https://api.jquery.com/)
+6. [Google Maps](https://developers.google.com/maps/documentation/) and [Yelp API](https://www.yelp.com/developers/documentation/v3)
+8. [Firebase](https://firebase.google.com/docs)
 
 ## Author(s): 
 1. [Minori Hashimoto](https://github.com/minori-fh)

@@ -4,8 +4,6 @@ var address3Object = "San Francisco, CA"
 
 function initMap() {
 var map;
-// var address1 = "933 Cabrillo St, San Francisco, CA";
-// var address2 = "Vin Debut, San Francisco, CA";
 var address1 = address1Object
 var address2 = address2Object
 var address3 = address3Object
@@ -209,41 +207,8 @@ var address3 = address3Object
             { 
             coords:{lat:storeLat5, lng:storeLng5},
             content: businessName5
-            },
-            // { 
-            // coords:{lat:storeLat6, lng:storeLng6},
-            // content: businessName6
-            // },
-            // { 
-            // coords:{lat:storeLat7, lng:storeLng7},
-            // content: businessName7
-            // },
-            // { 
-            // coords:{lat:storeLat8, lng:storeLng8},
-            // content: businessName8
-            // },
-            // { 
-            // coords:{lat:storeLat9, lng:storeLng9},
-            // content: businessName9
-            // },
-            // { 
-            // coords:{lat:storeLat10, lng:storeLng10},
-            // content: businessName10
-            // },
-           
-            
+            }            
         ];
-
-    
-        //    var populateMarkerArray = function(responseCoords, responseNames) {
-        //        for (var i = 0; i < coords.length; i++) {
-        //            getMarkerArray.push({
-        //                coords: responseCoords[i],
-        //                content: responseNames[i]
-        //            })
-        //        }
-        //        console.log(getMarkerArray)
-        //    }
 
             // Create array for markers to be generated in nearby search.
 
@@ -372,12 +337,6 @@ function printData(){
     console.log(latitude)
     console.log(longitude)
 
-
-    // ***QUERY URL W/ OPEN NOW***
-    // var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&open_now=true&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
-    
-    // ***QUERY URL W/O OPEN NOW***
-
     var queryUrl = "https://api.yelp.com/v3/businesses/search?radius=1500&sort_by=rating&price=" + price + "&category=" + category + "&latitude=" + latitude + "&longitude=" + longitude
     console.log(queryUrl)
 
@@ -435,38 +394,6 @@ function printData(){
         businessName5 = response.businesses[5].name
         }
         
-        // if (response.businesses[6]) {
-        // storeLat6 =  response.businesses[6].coordinates.latitude
-        // storeLng6 = response.businesses[6].coordinates.longitude
-        // businessName6 = response.businesses[6].name
-        // }
-        
-        // if (response.businesses[7]) {
-        // storeLat7 =  response.businesses[7].coordinates.latitude
-        // storeLng7 = response.businesses[7].coordinates.longitude
-        // businessName7 = response.businesses[7].name
-        // }
-        
-        // if (response.businesses[8]) {
-        // storeLat8 =  response.businesses[8].coordinates.latitude
-        // storeLng8 = response.businesses[8].coordinates.longitude
-        // businessName8 = response.businesses[8].name
-        // }
-        
-        // if (response.businesses[9]) {
-        // storeLat9 =  response.businesses[9].coordinates.latitude
-        // storeLng9 = response.businesses[9].coordinates.longitude
-        // businessName9 = response.businesses[9].name
-        // }
-        
-        // if (response.businesses[10]) {
-        // storeLat10 =  response.businesses[10].coordinates.latitude
-        // storeLng10 = response.businesses[10].coordinates.longitude
-        // businessName10 = response.businesses[10].name
-        // }
-
-
-
         var businessInfo1 = $(".description-1")
             var businessInfo2 = $(".description-2")
             businessInfo1.empty()
@@ -562,19 +489,6 @@ $(".dropdown-price").on("click", function(){
     $("#second-user-input-page").hide()
     $("#array-drink").show()
     $("#array-coffee").hide()
-
-    // if (userSelectCategory === "bar"){
-    //     $("#second-user-input-page").hide()
-    //     $("#array-drink").show()
-    //     $("#array-coffee").hide()
-    //     console.log("wut")
-    // } else if (userSelectCategory === "cafe"){
-    //     $("#second-user-input-page").hide()
-    //     $("#array-coffee").show()
-    //     $("#array-drink").hide()
-    //     console.log("wutwut")
-    // }
-
 });
 
 $(".dropdown-item").on("click", function(){
@@ -590,20 +504,6 @@ $(".dropdown-item").on("click", function(){
     $("#second-user-input-page").hide()
     $("#array-drink").show()
     $("#array-coffee").hide()
-
-
-    // if (userSelectCategory === "bar"){
-    //     $("#second-user-input-page").hide()
-    //     $("#array-drink").show()
-    //     $("#array-coffee").hide()
-    //     console.log("nani")
-    // } else if (userSelectCategory === "cafe"){
-    //     $("#second-user-input-page").hide()
-    //     $("#array-coffee").show()
-    //     $("#array-drink").hide()
-    //     console.log("naninani")
-    // }
-
 });
 
 $("#next-button-1").on("click", function(){
