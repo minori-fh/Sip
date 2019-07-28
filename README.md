@@ -6,7 +6,11 @@
 ### Logic
 The basic logic flow of this web-based application begins with the user-input. The user inputs their parameters for their search, thus dynamically generating their final search query. That search query, once its parameters are completed, is used to perform an Ajax call to the Yelp API to return a JSON object with data to leveraged for rendering on the page. But before all of our information is rendered onto the page, we take location data from the Ajax call and send a request to the Google Maps API to dynamically generate a Javascript map w/ markers according to the location of the businesses received from the Yelp API.
 
+tl;dr...
+
+```
 tl;dr... [ WEB-CLIENT(input) ==> YELP API ==> GOOGLE API ==> WEB-CLIENT(render) ]
+```
 
 ## Pictures of Site
 [Click here to visit site](https://minori-fh.github.io/Sip/)
