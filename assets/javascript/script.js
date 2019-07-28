@@ -403,7 +403,7 @@ function printData(){
             console.log(response.businesses[1].image_url)
             console.log(response.businesses.length)
 
-            // TODO: FORMATTING FOR DYNAMICALLY APPENDED INFORMATION.
+            // FORMATTING FOR DYNAMICALLY APPENDED INFORMATION.
                 console.log(i)
 
                 var img1 = $(".img-1")
@@ -439,7 +439,7 @@ function printData(){
                 address1Object = ("<b> Location: </b>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + "<br>")
                 
                 businessInfo1.prepend("<b> Rating: </b>" + response.businesses[i].rating + "<br>")
-                businessInfo1.prepend("<span style = 'font-size: 20px'><b>" + response.businesses[i].name + "</b></span><br><br>")
+                businessInfo1.prepend("<span class='business-name' style = 'font-size: 20px'><strong>" + response.businesses[i].name + "</strong></span><br><br>")
                 $(".description-1").css("background-color", "white")
                 $(".description-1").css("height", "220px")
     
@@ -452,7 +452,7 @@ function printData(){
                 address2Object = ("Location: " + response.businesses[i+1].location.address1 + ', ' + response.businesses[i+1].location.city + ' ' + response.businesses[i+1].location.zip_code + "<br>")
                 
                 businessInfo2.prepend("<b> Rating: </b>" + response.businesses[i+1].rating + "<br>")
-                businessInfo2.prepend("<span style = 'font-size: 20px'><b>" + response.businesses[i+1].name + "</b></span><br><br>")
+                businessInfo2.prepend("<span class='business-name' style = 'font-size: 20px'><b>" + response.businesses[i+1].name + "</b></span><br><br>")
                 $(".description-2").css("background-color", "white")
                 $(".description-2").css("height", "220px")
 

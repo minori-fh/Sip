@@ -119,16 +119,12 @@
     height: 220px; 
 }
 
-#option-2 {
-    margin-top: 20px; 
+.card-img-top{
+	height: 250px !important; 
 }
 
-#description-1, #description-2 {
-	border: solid black 3px; 
-	background-color: white; 
-	color: black; 
-	font-family: 'Quicksand', sans-serif;
-	height: 100%; 
+#option-2 {
+    margin-top: 20px; 
 }
 
 #gm-content {
@@ -178,7 +174,7 @@
 #option-content {
 	background-color: rgba(0, 0, 0, 0.8);
 	z-index: 1; 
-	margin-top: 5%; 
+	margin-top: 3%; 
 	border: solid black 1px; 
 }
 
@@ -453,7 +449,7 @@
 	#go-home{
 		font-family: 'Pacifico', cursive; 
 		font-size: 30px; 
-		margin-top: 5px; 
+		margin-top: 5%; 
 
 	}
 
@@ -598,5 +594,4 @@
 	#address{
 		width: 70%
 	}
-
  
