@@ -65,7 +65,7 @@ $("#alc-picture").on("click",function(e) {
 ## Improvements for the Future
 1. Mobile responsiveness
 2. Incorporate user authentication to allow users to favorite bars/ cafes on their account to visit later
-3. Ability to update the comments that users have already left on a doge
+3. Refactor html code to use react
 4. Refactor html code to separate files for easier maintenance 
 
 ## Getting Started
