@@ -56,7 +56,7 @@ $("#alc-picture").on("click",function(e) {
 ```
 ![UserChoice1 Screenshot](assets/Images/site_images/site-2.gif)
 
-**Page for the user to go through 3 sets of two options:**
+**Page for the user to go through three sets of two options:**
 ![UseChoice2 Screenshot](assets/Images/site_images/site-4.png)
 
 **Page for the user to see where their options are located:**
