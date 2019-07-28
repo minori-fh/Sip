@@ -17,13 +17,13 @@ Initial loading page:
 Page for the user to make two choices:
 1.) Do they want to drink alcohol or coffee?
 2.) What's most important to them: price or location? 
-![Introduction scene Screenshot](assets/Images/site_images/site-2.gif)
+![UserChoice1 Screenshot](assets/Images/site_images/site-2.gif)
 
 Page for the user to go through 3 sets of two options
-![Battlescene Screenshot](assets/Images/site_images/site-4.png)
+![UseChoice2 Screenshot](assets/Images/site_images/site-4.png)
 
 Page for the user to see where their options are located
-![Battlescene Screenshot](assets/Images/site_images/site5.png)
+![Google Maps page Screenshot](assets/Images/site_images/site-5.png)
 
 ## Improvements for the Future
 1. Mobile responsiveness
