@@ -15,7 +15,7 @@ tl;dr... [ WEB-CLIENT(input) ==> YELP API ==> GOOGLE API ==> WEB-CLIENT(render) 
 ![Loading page Screenshot](assets/Images/site_images/site-1.png)
 
 **Page for the user to make two choices:**
-1.) Do they want to drink alcohol or coffee?
+1.) Do they want to drink alcohol or coffee? and 2.) What's most important to them: price or location? 
 
 The user's choice was recorded using an on click event handler to determine which side of the image was clicked (left for alcohol and right for coffee).
 
@@ -50,7 +50,6 @@ $("#alc-picture").on("click",function(e) {
 });
 
 ```
-2.) What's most important to them: price or location? 
 ![UserChoice1 Screenshot](assets/Images/site_images/site-2.gif)
 
 **Page for the user to go through 3 sets of two options:**
