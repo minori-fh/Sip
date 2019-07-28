@@ -417,6 +417,7 @@ function printData(){
                 var yelpLogo = $('<img>')
                 yelpLogo.attr("src", "assets/Images/yelp-logo.png")
                 yelpLogo.attr("width", "40px")
+                yelpLogo.addClass("yelp-logo")
                 
                 var anchorLogo1 = $("<a>")
                 anchorLogo1.attr("href", response.businesses[i].url)
