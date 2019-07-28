@@ -11,18 +11,52 @@ tl;dr... [ WEB-CLIENT(input) ==> YELP API ==> GOOGLE API ==> WEB-CLIENT(render) 
 ## Pictures of Site
 [Click here to visit site](https://minori-fh.github.io/Sip/)
 
-Initial loading page: 
+**Initial loading page:** 
 ![Loading page Screenshot](assets/Images/site_images/site-1.png)
 
-Page for the user to make two choices:
+**Page for the user to make two choices:**
 1.) Do they want to drink alcohol or coffee?
+
+The user's choice was recorded using an on click event handler to determine which side of the image was clicked (left for alcohol and right for coffee).
+
+```
+//Event handler: when user clicks on image
+$("#alc-picture").on("click",function(e) {
+    var pWidth = $(this).innerWidth(); 
+    var pOffset = $(this).offset(); 
+    var x = e.pageX - pOffset.left;
+    if(pWidth/2 > x){
+        $("#alc-picture").addClass("rotate-center-left")
+        setTimeout(function(){ $("#alc-picture").removeClass("rotate-center-left");},1000)
+        alcohol = 1;
+        coffee = 0; 
+        // setTimeouts to manipulate HTML DOM for change in page
+        setTimeout(function(){$('#main-page').hide();}, 1000);
+        setTimeout(function(){$('#second-user-input-page').show();}, 1000);
+        // add animation class to bounce images on next page
+        $(".location-price").addClass("bounce-top")
+    } else{
+        $("#alc-picture").addClass("rotate-center-right")
+        setTimeout(function(){ $("#alc-picture").removeClass("rotate-center-right");},1000)
+
+        alcohol = 1;
+        coffee = 0; 
+        // setTimeouts to manipulate HTML DOM for change in page
+        setTimeout(function(){$('#main-page').hide();}, 1000);
+        setTimeout(function(){$('#second-user-input-page').show();}, 1000);
+        // add animation class to bounce images on next page
+        $(".location-price").addClass("bounce-top")
+    }
+});
+
+```
 2.) What's most important to them: price or location? 
 ![UserChoice1 Screenshot](assets/Images/site_images/site-2.gif)
 
-Page for the user to go through 3 sets of two options
+**Page for the user to go through 3 sets of two options:**
 ![UseChoice2 Screenshot](assets/Images/site_images/site-4.png)
 
-Page for the user to see where their options are located
+**Page for the user to see where their options are located:**
 ![Google Maps page Screenshot](assets/Images/site_images/site-5.png)
 
 ## Improvements for the Future

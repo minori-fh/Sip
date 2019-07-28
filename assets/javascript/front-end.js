@@ -21,7 +21,7 @@ var tyNextA = 0;
 
 //Event handler: when user clicks on image
 $("#alc-picture").on("click",function(e) {
-    var pWidth = $(this).innerWidth(); //use .outerWidth() if you want borders
+    var pWidth = $(this).innerWidth(); 
     var pOffset = $(this).offset(); 
     var x = e.pageX - pOffset.left;
     if(pWidth/2 > x){
@@ -29,8 +29,10 @@ $("#alc-picture").on("click",function(e) {
         setTimeout(function(){ $("#alc-picture").removeClass("rotate-center-left");},1000)
         alcohol = 1;
         coffee = 0; 
+        // setTimeouts to manipulate HTML DOM for change in page
         setTimeout(function(){$('#main-page').hide();}, 1000);
         setTimeout(function(){$('#second-user-input-page').show();}, 1000);
+        // add animation class to bounce images on next page
         $(".location-price").addClass("bounce-top")
     } else{
         $("#alc-picture").addClass("rotate-center-right")
@@ -38,8 +40,10 @@ $("#alc-picture").on("click",function(e) {
 
         alcohol = 1;
         coffee = 0; 
+        // setTimeouts to manipulate HTML DOM for change in page
         setTimeout(function(){$('#main-page').hide();}, 1000);
         setTimeout(function(){$('#second-user-input-page').show();}, 1000);
+        // add animation class to bounce images on next page
         $(".location-price").addClass("bounce-top")
     }
 });
