@@ -9,7 +9,7 @@ The basic logic flow of this web-based application begins with the user-input. T
 tl;dr...
 
 ```
-tl;dr... [ WEB-CLIENT(input) ==> YELP API ==> GOOGLE API ==> WEB-CLIENT(render) ]
+[ WEB-CLIENT(input) ==> YELP API ==> GOOGLE API ==> WEB-CLIENT(render) ]
 ```
 
 ## Pictures of Site
